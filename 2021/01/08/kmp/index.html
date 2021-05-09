@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="mac端, 代码小白的领地">
+    <meta name="keywords" content="KMP算法, 代码小白的领地">
     <meta name="description" content="专注于JAVA,分享生活,分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>mac端 | 代码小白的领地</title>
+    <title>KMP算法 | 代码小白的领地</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/libs/awesome/css/all.css">
@@ -249,12 +249,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">mac端</h1>
+                    <h1 class="description center-align post-title">KMP算法</h1>
                 </div>
             </div>
         </div>
@@ -368,12 +368,29 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/">
+                                <span class="chip bg-color">数据结构复习</span>
+                            </a>
+                        
+                            <a href="/tags/%E4%B8%B2/">
+                                <span class="chip bg-color">串</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                数据结构
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -382,7 +399,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-04-28
+                    2021-01-08
                 </div>
                 
 
@@ -391,14 +408,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    8
+                    627
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -421,7 +438,10 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>学习配置mac版本的hexo</p>
+                <h2 id="KMP简介"><a href="#KMP简介" class="headerlink" title="KMP简介"></a>KMP简介</h2><p>KMP算法是我们数据结构串中最难也是最重要的算法。难是因为KMP算法的代码很优美简洁干练，但里面包含着非常深的思维。真正理解代码的人可以说对KMP算法的了解已经相当深入了。而且这个算法的不少东西的确不容易讲懂，很多正规的书本把概念一摆出直接劝退无数人。这篇文章将尽量以最详细的方式配图介绍KMP算法及其改进。文章的开始我先对KMP算法的三位创始人Knuth,Morris,Pratt致敬，懂得这个算法的流程后你真的不得不佩服他们的聪明才智。</p>
+<h2 id="KMP解决的问题"><a href="#KMP解决的问题" class="headerlink" title="KMP解决的问题"></a>KMP解决的问题</h2><p>KMP算法的作用是在一个已知字符串中查找子串的位置,也叫做串的模式匹配。比如主串s=“goodgoogle”,子串t=“google”。现在我们要找到子串t 在主串s 中的位置。大家肯定觉得这还不简单，不就在第五个嘛，一眼就看出来了。<br>当然，在字符串非常少时，“肉眼观察法”不失为一个好方法。但如果要你在一千行文本里找一个单词，我想一般人都会数得崩溃吧。这就让我想起来考试的时候，如果一两道选择题不会。这时候，“肉眼观察法”可能效果不错，但是如果好几道大题不会呢？“肉眼观察法”就丝毫不起效了。所以打铁还需自身硬，我们把这种枯燥的事以一定的算法交给计算机处理。<br>第一种我们容易想到的就是暴力求解法。<br>这种方法也叫朴素的模式匹配：</p>
+<p>简单来说就是：从主串s 和子串t 的第一个字符开始，将两字符串的字符一一比对，如果出现某个字符不匹配，主串回溯到第二个字符，子串回溯到第一个字符再进行一一比对。如果出现某个字符不匹配，主串回溯到第三个字符，子串回溯到第一个字符再进行一一比对…一直到子串字符全部匹配成功。</p>
+<p>下面我们通过图片展示这个过程：<br>竖直线表示相等，闪电线表示不等<br>第一个过程：子串“goo”部分与主串相等，’g’不等，结束比对，进行回溯。<br><img src="/.io//1.png" alt="1"></p>
 
                 
             </div>
@@ -448,7 +468,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://konghaowen.github.io/2021/04/28/mac-duan/">http://konghaowen.github.io/2021/04/28/mac-duan/</a>
+                    <a href="http://konghaowen.github.io/2021/01/08/kmp/">http://konghaowen.github.io/2021/01/08/kmp/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -485,7 +505,15 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/">
+                                    <span class="chip bg-color">数据结构复习</span>
+                                </a>
+                            
+                                <a href="/tags/%E4%B8%B2/">
+                                    <span class="chip bg-color">串</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -675,48 +703,9 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
-            <div class="card">
-                <a href="/2021/04/28/mac-duan/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="mac端">
-                        
-                        <span class="card-title">mac端</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-28
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            Kong
-                            
-                        </span>
-                    </div>
-                </div>
-
-                
-            </div>
-        </div>
-        
-        
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
                 <a href="/2021/01/08/docker-1/">
                     <div class="card-image">
@@ -734,9 +723,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-08
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-08
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -758,6 +747,60 @@
                     
                     <a href="/tags/docker%E5%AD%A6%E4%B9%A0/">
                         <span class="chip bg-color">docker学习</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/01/08/kmp/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/medias/featureimages/4.jpg" class="responsive-img" alt="KMP算法">
+                        
+                        <span class="card-title">KMP算法</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-08
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    数据结构
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/">
+                        <span class="chip bg-color">数据结构复习</span>
+                    </a>
+                    
+                    <a href="/tags/%E4%B8%B2/">
+                        <span class="chip bg-color">串</span>
                     </a>
                     
                 </div>
