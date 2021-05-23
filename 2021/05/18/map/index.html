@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Docker_1, 代码小白的领地">
+    <meta name="keywords" content="代码小白的领地">
     <meta name="description" content="专注于JAVA,分享生活,分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Docker_1 | 代码小白的领地</title>
+    <title>代码小白的领地</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/libs/awesome/css/all.css">
@@ -249,12 +249,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Docker_1</h1>
+                    <h1 class="description center-align post-title"></h1>
                 </div>
             </div>
         </div>
@@ -368,29 +368,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E9%85%8D%E7%BD%AE/">
-                                <span class="chip bg-color">配置</span>
-                            </a>
-                        
-                            <a href="/tags/docker%E5%AD%A6%E4%B9%A0/">
-                                <span class="chip bg-color">docker学习</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/Docker/" class="post-category">
-                                Docker
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -399,7 +382,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-01-08
+                    2021-05-18
                 </div>
                 
 
@@ -408,14 +391,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.6k
+                    2.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    9 分
+                    10 分
                 </div>
                 
 
@@ -438,97 +421,268 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Docker是什么？"><a href="#Docker是什么？" class="headerlink" title="Docker是什么？"></a>Docker是什么？</h2><h3 id="麻烦的环境部署"><a href="#麻烦的环境部署" class="headerlink" title="麻烦的环境部署"></a>麻烦的环境部署</h3><p>在软件开发中，最麻烦的事情之一就是环境配置。在正常情况下，如果要保证程序能运行，我们需要设置好操作系统，以及各种库和组件的安装。</p>
-<p>举例来说，要运行一个Python程序，计算机必须要有 Python 引擎，还需要安装好程序的各种依赖，甚至还要配置特定的环境变量。假设你有两个程序都需要部署在同一个服务器上，一个需要软件是基于Python2.0，一个是Python3.0，那么在部署上就很容易造成混乱。因为不同版本的Python模块可能互不兼容，况且不同开发环境上的库也需要额外的配置。如果要部署很多程序，而开发环境和部署环境各不相同的话，可想而知配置得多么麻烦。</p>
-<p>为了更好地将软件从一个环境移植到另一个环境上，必须从根源上解决问题，那么如何在移植软件的时候，将一模一样的原始环境迁移过来呢？</p>
-<h3 id="虚拟机（Virtual-Machine）"><a href="#虚拟机（Virtual-Machine）" class="headerlink" title="虚拟机（Virtual Machine）"></a>虚拟机（Virtual Machine）</h3><p>虚拟机是移植环境的一种解决方案。虚拟机本质上也是一个软件，在这个软件中，我们可以运行另一种操作系统。比如我们想要在 MacOS 上运行 Linux 系统，我们就在电脑上安装 Linux 镜像，并使用虚拟机打开此镜像，就能创建出一个镜中镜了。这个方案非常方便，想要新环境，就安装镜像，然后使用虚拟机打开，不想要直接删除。但是这个方案有几个缺点：</p>
+                <h2 id="1-Map接口概述："><a href="#1-Map接口概述：" class="headerlink" title="1.Map接口概述："></a>1.<strong>Map接口概述</strong>：</h2><ul>
+<li>Map与Collection并列存在，用于保存具有<strong>映射关系</strong>的数据：key-value</li>
+<li>Map中的key和value都可以是任何引用类型的数据。</li>
+<li>Map中的key用Set来存放，不允许重复，即同一个Map对象所对应的类，须重写hashCode()和equlas() 方法，</li>
+<li>常用String类作为Map的 “键” (key)</li>
+<li>key和value之间存在单向一对一的关系，即通过指定的key总能找到唯一的、确定的value</li>
+<li>Map接口的常用实现类：HashMap、TreeMap、LinkedHashMap和Properties。其中，<strong>HashMap</strong>是Map接口使用频率最高的实现类</li>
+</ul>
+<h2 id="2-Map实现类结构"><a href="#2-Map实现类结构" class="headerlink" title="2.Map实现类结构"></a>2.Map实现类结构</h2><ul>
+<li><p>Map</p>
+<p>：存储双列数据，存储key-value对的数据，类似函数的概念</p>
+<ul>
+<li><p>HashMap</p>
+<p>：作为Map的主要实现类：线程不安全，效率高，可以存储null的key和value</p>
+<ul>
+<li><strong>LinkedHashMap</strong>：能保证在遍历map元素时，可以按照添加的顺序进行遍历。实现方法是在原有的HashMap底层结构的基础上添加了一对指针，指向前一个和后一个元素。对于频繁遍历的操作，此类执行效率高于HashMap。</li>
+</ul>
+</li>
+<li><p><strong>TreeMap</strong>：（有序）保证按照添加的key-value对进行排序，实现排序遍历，此时使用key的自然排序和定制排序底层使用红黑树。</p>
+</li>
+<li><p>HashTable</p>
+<p>：作为古老实现类，线程安全，效率低不能存储null的key和value</p>
+<ul>
+<li><strong>Properties</strong>：常用来处理配置文件，key和value都是String类型。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="http://121.199.69.187/wp-content/uploads/2020/10/Snipaste_2020-10-12_14-55-34-1024x662.png" alt="img">Map接口结构</p>
+<p><strong>Map的常用方法：</strong></p>
+<p>1.<strong>添加、删除、修改操作：</strong> </p>
 <ol>
-<li>占用资源多：虚拟机需要安装整个操作系统，自然会消耗大量内存和硬盘空间。如我们只需要运行1MB的软件，有时候也不得不安装几个G的环境才能运行。</li>
-<li>运行步骤冗余：虚拟机安装的是完整的系统，每次运行程序都需要按部就班，打开系统、登入用户等等之类麻烦的步骤，很不方便。</li>
-<li>运行速度慢：为了运行特定环境中的软件，虚拟机必须先运行系统，而系统占用的资源往往很多（网络，GUI，IO等等），自然也会影响运行速度。</li>
+<li>Object put(Object key,Object value)：将指定key-value添加到(或修改)当前map对象中 </li>
+<li>void putAll(Map m):将m中的所有key-value对存放到当前map中</li>
+<li>Object remove(Object key)：移除指定key的key-value对，并返回value </li>
+<li>void clear()：清空当前map中的所有数据 </li>
 </ol>
-<h3 id="Linux容器（Container）"><a href="#Linux容器（Container）" class="headerlink" title="Linux容器（Container）"></a>Linux容器（Container）</h3><p>为了解决虚拟机存在的这些缺点，Linux发展出了另一种虚拟化的技术：Linux容器。Linux 容器不是模拟一个完整的操作系统，而是对进程进行隔离。或者说，就是在正常进程的外面套用了一个保护层。对于容器里面的进程来说，它接触到的各种资源都是虚拟的，从而实现与底层程序的隔离。由于容器是进程级别的，相比虚拟机有更多优势：</p>
+<p>2.<strong>元素查询的操作：</strong> </p>
 <ol>
-<li>占有资源少：容器只占用需要的资源，不占用那些用不到的资源。相比于虚拟机安装完整的操作系统，容器需要消耗的空间自然就少了很多。</li>
-<li>资源利用率高：虚拟机都是独享资源，电脑需要为每个虚拟环境单独分配资源，不仅仅占用空间大，而且资源的利用率很低。而容器之间可以共享资源，最大化资源的利用率。</li>
-<li>运行速度快：容器里面的应用就是底层系统的一个进程，所以启动容器相当于直接运行本机的一个进程，而不是一个完整并臃肿的操作系统，自然就快很多。</li>
+<li>Object get(Object key)：获取指定key对应的value </li>
+<li>boolean containsKey(Object key)：是否包含指定的key</li>
+<li>boolean containsValue(Object value)：是否包含指定的value </li>
+<li>int size()：返回map中key-value对的个数 </li>
+<li>boolean isEmpty()：判断当前map是否为空 </li>
+<li>boolean equals(Object obj)：判断当前map和参数对象obj是否相等</li>
 </ol>
-<h3 id="Docker是什么？-1"><a href="#Docker是什么？-1" class="headerlink" title="Docker是什么？"></a>Docker是什么？</h3><p>Docker属于Linux容器的一种封装，提供简单易用的容器使用接口，它也是目前最流行的Linux容器解决方案。Docker 将软件代码和其依赖，全打包在一个文件中。运行单个文件，就会生成虚拟容器。在这个虚拟容器中，不管本地的操作系统是如何的不同，此容器都能照常运行。</p>
-<p>简而言之，Docker的接口非常简单，可以帮助用户更好地创建和使用容器，让相同的代码在不同的环境上正常运行。</p>
-<h3 id="Docker的用途"><a href="#Docker的用途" class="headerlink" title="Docker的用途"></a>Docker的用途</h3><p>Docker目前主要有以下三个用途：</p>
+<p>3.<strong>元视图操作的方法：</strong></p>
 <ol>
-<li>提供一次性的环境：本地测试别人的软件、持续集成的时候提供单元测试和构建的环境。</li>
-<li>提供弹性的云服务：因为Docker容器可以随时启动或关闭，所以非常适合动态规划和缩容。</li>
-<li>组建微服务构架：通过多个容器，服务的部署能更加灵活，帮助实现微服务构架。</li>
+<li>Set keySet()：返回所有key构成的Set集合</li>
+<li>Collection values()：返回所有value构成的Collection集合</li>
+<li>Set entrySet()：返回所有key-value对构成的Set集合</li>
 </ol>
-<h2 id="运行第一个Docker容器"><a href="#运行第一个Docker容器" class="headerlink" title="运行第一个Docker容器"></a>运行第一个Docker容器</h2><h3 id="安装Docker"><a href="#安装Docker" class="headerlink" title="安装Docker"></a>安装Docker</h3><p>Docker是一个开源的商业产品，有两个版本：社群版（Community Edition）和企业本（Enterprise Edition）。企业版中包含了一些收费服务，个人开发者一般用不到。下面我们就来下载并使用社区版。</p>
-<p>Docker CE 的安装可以参看官网网站：<a target="_blank" rel="noopener" href="https://docs.docker.com/get-docker/%EF%BC%8C%E8%AF%B7%E6%A0%B9%E6%8D%AE%E8%87%AA%E5%B7%B1%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%B1%BB%E5%9E%8B%E9%80%89%E6%8B%A9%E7%9B%B8%E5%AF%B9%E5%BA%94%E7%9A%84%E7%89%88%E6%9C%AC%E3%80%82">https://docs.docker.com/get-docker/，请根据自己操作系统的类型选择相对应的版本。</a></p>
-<p>安装完成后，运行下面的命令，验证是否安装成功。</p>
-<pre class="line-numbers language-none"><code class="language-none">$ docker version<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>确认 Docker 安装完毕后，我们可以使用以下命令运行 Docker：</p>
-<pre class="line-numbers language-none"><code class="language-none">$ sudo service docker start<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>使用 Mac 的朋友直接打开下载好的 Docker 软件即可。</p>
-<h3 id="image文件"><a href="#image文件" class="headerlink" title="image文件"></a>image文件</h3><p>Docker 把应用程序及其依赖，打包在 image 文件里面。只有通过这个文件，才能生成 Docker 容器。image 文件可以看作是容器的设计蓝图。Docker 根据 image 文件生成容器的实例。同一个 image 文件，可以生成多个同时运行的容器实例。</p>
-<p>image 是二进制文件，在实际开发中，一个 image 文件往往通过继承另一个 image 文件，加上一些个性化设置而生成。举例来说，你可以在 Ubuntu 的 image 基础上，往里面加入 Apache 服务器，形成你的 image。</p>
-<pre class="line-numbers language-none"><code class="language-none"># 列出本机所有的 image 文件
-$ docker image ls
-# 删除特定的 image
-$ docker image rm [imageName]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>image 文件是通用的，一台机器的 image 文件拷贝到另一台机器，照样可以使用。一般来说，为了节省时间，我们应该尽量使用别人制作好的 image 文件，而不是自己制作。即使要定制，也应该基于别人的 image 文件进行加工，而不是从零开始制作。</p>
-<p>为了方便分享，image 文件制作完成后，可以上传到网上的仓库。Docker 的官方仓库 Docker Hub 是最重要、最常用的 image 仓库。此外，公开分享自己制作的 image 文件也是可以的。</p>
-<h3 id="官方镜像-Hello-World"><a href="#官方镜像-Hello-World" class="headerlink" title="官方镜像 Hello World"></a>官方镜像 Hello World</h3><p>下面，我们通过最简单的 image “hello word”，来感受一下 Docker 的易用性。</p>
-<p>首先我们运行下面的命令，将 image 从仓库抓取到本地：</p>
-<pre class="line-numbers language-none"><code class="language-none">$ docker image pull hello-world<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>抓取成功以后，使用下面的指令，就能在本机看到这个 image 文件了：</p>
-<pre class="line-numbers language-none"><code class="language-none">$ docker image ls<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>运行这个 image：</p>
-<pre class="line-numbers language-none"><code class="language-none">$ docker container run hello-world<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>docker container run 命令会根据 image 的设定，生成一个正在运行的容器实例。</p>
-<p>注意，docker container run 命令具有自动抓取 image 文件的功能。如果发现本地没有指定的 image 文件，就会从云端仓库自动抓取。因此，前面的 docker image pull 命令并不是必需的步骤。如果运行成功，你就会在屏幕上读到类似下面的输出：</p>
-<pre class="line-numbers language-none"><code class="language-none">$ docker container run hello-world
-
-Hello from Docker!
-This message shows that your installation appears to be working correctly.
-......<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>输出这段提示以后，hello world 就会停止运行，容器自动终止。</p>
-<p>有些容器不会自动终止，比如一些容器提供的是服务：像是Ubuntu的image，就可以在命令行体验Ubuntu系统：</p>
-<pre class="line-numbers language-none"><code class="language-none">$ docker container run -it ubuntu bash<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>对于那些不会自动终止的容器，我们可以使用 docker container kill 命令终止。首先我们可以使用 docker container ls 找到你要终止容器的id，然后使用 kill 命令终止容器：</p>
-<pre class="line-numbers language-none"><code class="language-none">$ docker contianer ls 
-
-$ docker container kill [containerId]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h3 id="建立自己的容器"><a href="#建立自己的容器" class="headerlink" title="建立自己的容器"></a>建立自己的容器</h3><p>学会使用官方的 image 文件以后，接下来的问题就是，如何生成自己的 image 文件？这里就需要使用 Dockerfile 文件，Dockerfile 是一个文本文件，用来配置 image 的具体内容。Docker 会根据该文件生成二进制的 image 文件。</p>
-<p>下面我们在本地编辑一个 Python 文件 hello.py，这个文件的功能是使用 Python 打印出一行字符串：</p>
-<pre class="line-numbers language-none"><code class="language-none">print('Hello World :)')<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>然后，我们可以在这个项目的相同路径中，新建一个文本文件 .dockerignore，写入以下内容：</p>
-<pre class="line-numbers language-none"><code class="language-none">__pycache__
-env<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>这段代码表示，<strong>pycache</strong> 和 env 这两个路径被排除，不会被打包进入 image 文件。如果你没有路径要排除，这个文件可以不用建。</p>
-<p>然后，在项目的根目录下，新建一个文件文件 Dockerfile，写入下面的内容：</p>
-<pre class="line-numbers language-none"><code class="language-none">FROM python3.
-COPY . /app
-WORKDIR /app
-python3 main.py<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>上面的代码一共五行，含义如下：</p>
-<pre class="line-numbers language-none"><code class="language-none"># 将 image 文件继承与官方的3.7版本的Python
-FROM python:3.7
-# 将当前目录下的所有文件（除了 .dockerignore 排除的路径），都拷贝进 image 文件的 /app 目录。
-COPY . /app 
-# 指定接下来的工作路径为 /app
-WORKDIR /app 
-# 在 /app 目录下，运行 python 文件
-CMD python3 hello.py <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>有了 Dockerfile 之后，就可以使用 docker image build 命令创建 image 文件了：</p>
-<pre class="line-numbers language-none"><code class="language-none">$ docker image build -t python-app .
-or 
-$ docker image build -t python-app:0.0.1 .<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>这段命令行的意思是，-t 参数用来指定 image 文件的名字，后面还可以用冒号指定标签。如果不指定，默然的标签是latest。最后的那个点表示 Dockerfile 文件使用的路径，上面的例子是当前路径，所以是一个点。</p>
-<p>如果运行成功，就能使用 docker image ls 看到新的image文件了。</p>
-<p>创建好 image 之后，就能使用 docker container run 运行 image，并生成容器了。</p>
-<pre class="line-numbers language-none"><code class="language-none">$ docker container run python3-app
-Hello World :)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>如果一切正常，运行上面的命令后，就会返回输出内容，这就代表运行完成啦。</p>
-<p>祝大家学习快乐！</p>
+<h2 id="3-Map实现类之一：HashMap"><a href="#3-Map实现类之一：HashMap" class="headerlink" title="3.Map实现类之一：HashMap"></a>3.Map实现类之一：HashMap</h2><ol>
+<li>HashMap是 Map接口<strong>使用频率最高</strong>的实现类。</li>
+<li>允许使用null键和null值，与HashSet一样，不保证映射的顺序。</li>
+<li>所有的<strong>key</strong>构成的集合是<strong>Set</strong>:无序的、不可重复的。所以，key所在的类要重写： equals()和hashCode()</li>
+<li>所有的<strong>value</strong>构成的集合是<strong>Collection</strong>:无序的、可以重复的。所以,value所在的类要重写equals()</li>
+<li>一个key-value构成一个entry</li>
+<li>所有的entry构成的集合是Set:无序的、不可重复的</li>
+<li>HashMap 判断两个 key 相等的标准是：两个 key 通过 equals() 方法返回 true，且hashCode 值也相等。</li>
+<li>HashMap判断两个 key 相等的标准是：两个 value 通过 equals() 方法返回 true。</li>
+</ol>
+<p><img src="http://121.199.69.187/wp-content/uploads/2020/10/Snipaste_2020-10-15_19-28-31-1024x647.png" alt="img"></p>
+<h3 id="3-1-HashMap的存储结构与底层实现原理（重点）"><a href="#3-1-HashMap的存储结构与底层实现原理（重点）" class="headerlink" title="3.1 HashMap的存储结构与底层实现原理（重点）"></a>3.1 HashMap的存储结构与底层实现原理（重点）</h3><p>JDK 7 及以前版本：HashMap是数组+链表结构(即为链地址法) </p>
+<p><img src="http://121.199.69.187/wp-content/uploads/2020/10/Snipaste_2020-10-15_20-16-54-1024x546.png" alt="img"></p>
+<p>JDK 8 版本发布以后：HashMap是<strong>数组+链表+红黑树</strong>实现。</p>
+<p><img src="http://121.199.69.187/wp-content/uploads/2020/10/Snipaste_2020-10-15_20-20-21-1024x371.png" alt="img"></p>
+<p><strong>HashMap的底层实现原理：</strong></p>
+<p>以JDK 7为例，我们先把添加数据的过程简要分析一下：</p>
+<p>先新new一个HashMap：<em>HashMap map = new HashMap( );</em> </p>
+<p>在实例化之后，底层创建了长度是16的一维数组：<em>Entry[ ] table</em></p>
+<p>然后就该向map中添加元素(Entry)了：调用 <em>map.put(key1,value1);</em></p>
+<p>调用key1所在类的*hashCode( )*；计算key1的哈希值，此值经过某种计算后得到在Entry数组中存放的位置</p>
+<p>此位置上是否有元素</p>
+<p>如果此位置上的数据为空，则此时key1-value1添加成功 —-&gt;情况 1</p>
+<p>如果此位置上的数据不为空，意味着此位置上存在一个或多个数据（以链表形式存在），比较key1和已经存在的一个或多个数据的哈希值</p>
+<p>key1的哈希值与已经存在的数据哈希值异同</p>
+<p>如果key1和已有数据哈希值都不相同，则此时key1-value1添加成功。—-&gt;情况2</p>
+<p>如果key1和已有数据的某一个哈希值相同（key2-value2），继续比较，调用key1所在类的*equals(key2-value2)*比较</p>
+<p>equals(key2-value2)比较结果</p>
+<p>如果返回false，key1-value1添加成功 —-&gt; 情况3</p>
+<p>如果返回true，使用value1替换value2。</p>
+<p>补充：关于情况2和情况3，此时key1-value1和原来的数据以链表形式存储；在不断添加的过程中，会涉及到扩容问题，当超出临界值（且要存放的位置非空），默认的扩容方式为原来的容量的两倍，并将原有的数据复制过来。</p>
+<p>jdk8相较于jdk7在底层实现方面的不同：</p>
+<ul>
+<li>new HashMap();底层没有创建一个长度为16的数组 </li>
+<li>jdk8底层的数组是Node类型的数组，而非entry数组 </li>
+<li><strong>首次调用put()时，底层创建长度为16的数组</strong> </li>
+<li>jdk7底层结构只有数组+链表；jdk8中底层结构：<strong>数组+链表+红黑树</strong> </li>
+<li>jdk8使用红黑树的情况：<strong>当数组的某一个索引位置上的元素以链表形式存在的数据个数 &gt; 8 且当前数组的长度 &gt; 64时</strong>，此时此索引位置上的所有数据改为使用红黑树存储</li>
+</ul>
+<p><em>如果向更深入了解HashMap的底层知识，请深吸一口气，点开下面的折叠条。</em></p>
+<p>HashMap分析</p>
+<p><strong>HR：谈谈你对HashMap中put/get方法的认识？如果了解再谈谈 HashMap的扩容机制？默认大小是多少？什么是负载因子( 或填充比)？什么是吞吐临界值(或阈值、threshold)？</strong></p>
+<p><strong>HR：负载因子值的大小，对HashMap有什么影响</strong></p>
+<ol>
+<li>负载因子的大小决定了HashMap的数据密度。 </li>
+<li>负载因子越大密度越大，发生碰撞的几率越高，数组中的链表越容易长, 造成查询或插入时的比较次数增多，性能会下降。 </li>
+<li>负载因子越小，就越容易触发扩容，数据密度也越小，意味着发生碰撞的 几率越小，数组中的链表也就越短，查询和插入时比较的次数也越小，性能会更高。但是会浪费一定的内容空间。而且经常扩容也会影响性能，建 议初始化预设大一点的空间。 </li>
+<li>按照其他语言的参考及研究经验，会考虑将负载因子设置为0.7~0.75，此 时平均检索长度接近于常数。</li>
+</ol>
+<h2 id="4-Map的实现类之二：LinkedHashMap"><a href="#4-Map的实现类之二：LinkedHashMap" class="headerlink" title="4.Map的实现类之二：LinkedHashMap"></a>4.Map的实现类之二：LinkedHashMap</h2><ol>
+<li>LinkedHashMap是HashMap的子类</li>
+<li>再HashMap的存储结构基础上，使用了一对双向链表来记录添加元素的顺序</li>
+<li>与LinkedHashSet类似，LinkedHashMap 可以维护 Map 的迭代顺序：迭代顺序与 Key-Value 对的插入顺序一致</li>
+</ol>
+<p><strong>LinkedHashMap的Entry：</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">static class Entry&lt;K,V&gt; extends HashMap.Node&lt;K,V&gt; {
+    Entry&lt;K,V&gt; before, after;//能够记录添加的元素的先后顺序
+    Entry(int hash, K key, V value, Node&lt;K,V&gt; next) {
+        super(hash, key, value, next);
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>HashMap的Node：</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">static class Node&lt;K,V&gt; implements Map.Entry&lt;K,V&gt; {
+   final int hash;
+   final K key;
+   V value;
+   Node&lt;K,V&gt; next;
+ }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="5-Map的实现类之三：TreeMap"><a href="#5-Map的实现类之三：TreeMap" class="headerlink" title="5.Map的实现类之三：TreeMap"></a>5.Map的实现类之三：TreeMap</h2><ol>
+<li><p>TreeMap存储 Key-Value 对时，需要根据 key-value 对进行排序。 TreeMap 可以保证所有的 Key-Value 对处于<strong>有序</strong>状态。 </p>
+</li>
+<li><p>TreeSet底层使用<strong>红黑树</strong>结构存储数据 </p>
+</li>
+<li><p>TreeMap 的 Key 的排序：</p>
+</li>
+</ol>
+<ul>
+<li><strong>自然排序</strong>：TreeMap 的所有的 Key 必须实现 Comparable 接口，而且所有的 Key 应该是同一个类的对象，否则将会抛出 ClasssCastException </li>
+<li><strong>定制排序</strong>：创建 TreeMap 时，传入一个 Comparator 对象，该对象负责对 TreeMap 中的所有 key 进行排序。此时不需要 Map 的 Key 实现 Comparable 接口 </li>
+</ul>
+<ol start="4">
+<li>TreeMap判断<strong>两个key相等的标准</strong>：两个key通过compareTo()方法或 者compare()方法返回0。</li>
+</ol>
+<ul>
+<li><strong>TreeMap的自然排序：</strong></li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">public void test()  {
+    TreeMap map=new TreeMap();
+    Person p1=new Person("tom",10);
+    Person p2=new Person("jack",15);
+    Person p3=new Person("jerry",14);
+    Person p4=new Person("hell",16);
+    Person p5=new Person("duck",19);
+    map.put(p1,95);
+    map.put(p2,98);
+    map.put(p3,99);
+    map.put(p4,100);
+    map.put(p5,92);
+ 
+    Set entrySet=map.entrySet();
+    Iterator iterator1 = entrySet.iterator();
+    while (iterator1.hasNext()){
+        Object obj =iterator1.next();
+        //entrySet集合中元素都是entry
+        Map.Entry entry =(Map.Entry) obj;
+        System.out.println(entry.getKey()+"----&gt;"+entry.getValue());
+    }
+ 
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><strong>TreeMap的定制排序：</strong></li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">public void test1(){
+        TreeMap map=new TreeMap(new Comparator() {
+            @Override
+            public int compare(Object o1, Object o2) {
+                if (o1 instanceof Person &amp;&amp; o2 instanceof Person){
+                    Person p1=(Person) o1;
+                    Person p2=(Person) o2;
+                    return Integer.compare(p1.getAge(),p2.getAge());
+ 
+                }
+                throw new RuntimeException("输入的类型有误");
+            }
+        });
+        Person p1=new Person("tom",10);
+        Person p2=new Person("jack",15);
+        Person p3=new Person("jerry",14);
+        Person p4=new Person("hell",16);
+        Person p5=new Person("duck",19);
+        map.put(p1,95);
+        map.put(p2,98);
+        map.put(p3,99);
+        map.put(p4,100);
+        map.put(p5,92);
+ 
+        Set entrySet=map.entrySet();
+        Iterator iterator1 = entrySet.iterator();
+        while (iterator1.hasNext()){
+            Object obj =iterator1.next();
+            //entrySet集合中元素都是entry
+            Map.Entry entry =(Map.Entry) obj;
+            System.out.println(entry.getKey()+"----&gt;"+entry.getValue());
+        }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="6-Map实现类之四：Hashtable"><a href="#6-Map实现类之四：Hashtable" class="headerlink" title="6.Map实现类之四：Hashtable"></a><strong>6.Map实现类之四：Hashtable</strong></h2><ol>
+<li>Hashtable是个古老的 Map 实现类，JDK1.0就提供了。</li>
+<li>不同于HashMap， Hashtable是<strong>线程安全</strong>的。 </li>
+<li>Hashtable实现原理和HashMap相同，功能相同。底层都使用<strong>哈希表</strong>结构，<strong>查询速度快</strong>，很多情况下可以互用。 </li>
+<li>与HashMap不同，Hashtable <strong>不允许使用 null 作为 key 和 value</strong></li>
+<li>与HashMap一样，Hashtable 也<strong>不能保证其中 Key-Value 对的顺序</strong></li>
+<li>Hashtable判断两个key相等、两个value相等的标准，与HashMap一致。</li>
+</ol>
+<h2 id="7-Map实现类之五：Properties"><a href="#7-Map实现类之五：Properties" class="headerlink" title="7.Map实现类之五：Properties"></a>7.<strong>Map实现类之五：Properties</strong></h2><ul>
+<li>Properties 类是 Hashtable 的子类，该对象用于处理属性文件 </li>
+<li>由于属性文件里的 key、value 都是字符串类型，所以 Properties 里的 key 和 value 都是字符串类型</li>
+<li>存取数据时，建议使用setProperty(String key,String value)方法和 getProperty(String key)方法</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">Properties pros = new Properties();
+  pros.load(new FileInputStream("jdbc.properties"));
+  String user = pros.getProperty("user");
+  System.out.println(user);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>关于Properties的练习</strong></p>
+<p>第一步，在IDEA中创建一个名为xxx.properties的文档，这里以jdbc.properties为例</p>
+<p><img src="/.io//svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+" alt="img">properties文件</p>
+<p>然后在文档里写入数据，以key-value的形式</p>
+<p><img src="/.io//svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+" alt="img"></p>
+<p>其中，name为key；age为value。</p>
+<p>然后创建一个测试类</p>
+<pre class="line-numbers language-none"><code class="language-none">package JavaSenior.CollectionTest.Map;
+ 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.net.PasswordAuthentication;
+import java.sql.JDBCType;
+import java.util.Properties;
+ 
+/**
+ * @author du guodong
+ * @create 2020-10-08-9:22
+ */
+public class PropertiesTest {
+    public static void main(String[] args)  {
+        FileInputStream fis = null;
+        try {
+            Properties pros = new Properties();
+            fis = new FileInputStream("jdbc.properties");
+            pros.load(fis);//加载流对应的文件
+            String name = pros.getProperty("name");
+            String age = pros.getProperty("age");
+ 
+            System.out.println(name+ "==&gt;"+age);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally {
+            if (fis!=null){
+                try {
+                    fis.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+ 
+    }
+ 
+}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>运行测试即可，详细的讲解以后补充。</p>
 
                 
             </div>
@@ -555,7 +709,7 @@ Hello World :)<span aria-hidden="true" class="line-numbers-rows"><span></span><s
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://konghaowen.github.io/2021/01/08/docker-1/">http://konghaowen.github.io/2021/01/08/docker-1/</a>
+                    <a href="http://konghaowen.github.io/2021/05/18/map/">http://konghaowen.github.io/2021/05/18/map/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -592,15 +746,7 @@ Hello World :)<span aria-hidden="true" class="line-numbers-rows"><span></span><s
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E9%85%8D%E7%BD%AE/">
-                                    <span class="chip bg-color">配置</span>
-                                </a>
-                            
-                                <a href="/tags/docker%E5%AD%A6%E4%B9%A0/">
-                                    <span class="chip bg-color">docker学习</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -794,13 +940,13 @@ Hello World :)<span aria-hidden="true" class="line-numbers-rows"><span></span><s
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/04/28/mac-duan/">
+                <a href="/2021/05/20/pychon-zhi-shi-zong-jie/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="mac端">
+                        <img src="https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">mac端</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -811,7 +957,7 @@ Hello World :)<span aria-hidden="true" class="line-numbers-rows"><span></span><s
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-28
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-20
                         </span>
                         <span class="publish-author">
                             
@@ -831,13 +977,13 @@ Hello World :)<span aria-hidden="true" class="line-numbers-rows"><span></span><s
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/01/08/kmp/">
+                <a href="/2021/05/12/mybatis/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/medias/featureimages/4.jpg" class="responsive-img" alt="KMP算法">
+                        <img src="https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">KMP算法</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -848,31 +994,15 @@ Hello World :)<span aria-hidden="true" class="line-numbers-rows"><span></span><s
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-08
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-12
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
-                                    数据结构
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Kong
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/">
-                        <span class="chip bg-color">数据结构复习</span>
-                    </a>
-                    
-                    <a href="/tags/%E4%B8%B2/">
-                        <span class="chip bg-color">串</span>
-                    </a>
-                    
                 </div>
                 
             </div>
