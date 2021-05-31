@@ -137,6 +137,19 @@
     
     
     <entry>
+      <title>关键字：enum</title>
+      <link href="2021/05/31/mei-ju/"/>
+      <url>2021/05/31/mei-ju/</url>
+      
+        <content type="html"><![CDATA[<h2 id="枚举类的属性："><a href="#枚举类的属性：" class="headerlink" title="枚举类的属性："></a>枚举类的属性：</h2><p>1.枚举类不应允许被改动，用private final修饰</p><p>2.使用的时候应该在构造器里赋值</p><p>3.定义带参的构造器，则在列出枚举值时也必须对应的传入参数。</p><p>代码：</p><pre class="line-numbers language-none"><code class="language-none"> class Season{    //1.声明Season对象的属性:private final修饰    private final String seasonName;    private final String seasonDesc;     //2.私有化类的构造器,并给对象属性赋值    private Season(String seasonName,String seasonDesc){        this.seasonName = seasonName;        this.seasonDesc = seasonDesc;    }     //3.提供当前枚举类的多个对象：public static final的    public static final Season SPRING = new Season("春天","春暖花开");    public static final Season SUMMER = new Season("夏天","夏日炎炎");    public static final Season AUTUMN = new Season("秋天","秋高气爽");    public static final Season WINTER = new Season("冬天","冰天雪地");}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="Enum类的方法："><a href="#Enum类的方法：" class="headerlink" title="Enum类的方法："></a>Enum类的方法：</h2><p>1.values()方法：返回枚举类型的对象数组。该方法可以很方便地遍历所有枚举值。</p><p>2.valueOf(String str):把字符串转成对应的枚举类对象。</p><p>3.toString()：返回当前枚举类对象常量的名称。</p><pre class="line-numbers language-none"><code class="language-none">注意：枚举类不可以被clone，如果调用clone会抛出一个CloneNotSupportedException的错误。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>关键字：JavaScript</title>
       <link href="2021/05/31/qian-duan-san-jian-ke-javascript/"/>
       <url>2021/05/31/qian-duan-san-jian-ke-javascript/</url>
@@ -149,19 +162,6 @@
           <category> 前端 </category>
           
       </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>关键字：enum</title>
-      <link href="2021/05/31/mei-ju/"/>
-      <url>2021/05/31/mei-ju/</url>
-      
-        <content type="html"><![CDATA[<h2 id="枚举类的属性："><a href="#枚举类的属性：" class="headerlink" title="枚举类的属性："></a>枚举类的属性：</h2><p>1.枚举类不应允许被改动，用private final修饰</p><p>2.使用的时候应该在构造器里赋值</p><p>3.定义带参的构造器，则在列出枚举值时也必须对应的传入参数。</p><p>代码：</p><pre class="line-numbers language-none"><code class="language-none"> class Season{    //1.声明Season对象的属性:private final修饰    private final String seasonName;    private final String seasonDesc;     //2.私有化类的构造器,并给对象属性赋值    private Season(String seasonName,String seasonDesc){        this.seasonName = seasonName;        this.seasonDesc = seasonDesc;    }     //3.提供当前枚举类的多个对象：public static final的    public static final Season SPRING = new Season("春天","春暖花开");    public static final Season SUMMER = new Season("夏天","夏日炎炎");    public static final Season AUTUMN = new Season("秋天","秋高气爽");    public static final Season WINTER = new Season("冬天","冰天雪地");}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="Enum类的方法："><a href="#Enum类的方法：" class="headerlink" title="Enum类的方法："></a>Enum类的方法：</h2><p>1.values()方法：返回枚举类型的对象数组。该方法可以很方便地遍历所有枚举值。</p><p>2.valueOf(String str):把字符串转成对应的枚举类对象。</p><p>3.toString()：返回当前枚举类对象常量的名称。</p><pre class="line-numbers language-none"><code class="language-none">注意：枚举类不可以被clone，如果调用clone会抛出一个CloneNotSupportedException的错误。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
-      
       
       
     </entry>
