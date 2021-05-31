@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="代码小白的领地">
+    <meta name="keywords" content="MAP, 代码小白的领地">
     <meta name="description" content="专注于JAVA,分享生活,分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>代码小白的领地</title>
+    <title>MAP | 代码小白的领地</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/libs/awesome/css/all.css">
@@ -249,12 +249,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title"></h1>
+                    <h1 class="description center-align post-title">MAP</h1>
                 </div>
             </div>
         </div>
@@ -375,6 +375,15 @@
                 </div>
                 <div class="col s5 right-align">
                     
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Java-SE/" class="post-category">
+                                Java SE
+                            </a>
+                        
+                    </div>
+                    
                 </div>
             </div>
 
@@ -382,7 +391,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-05-12
+                    2021-05-31
                 </div>
                 
 
@@ -391,14 +400,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    469
+                    2.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    10 分
                 </div>
                 
 
@@ -421,12 +430,268 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>如果拿盖房子做比喻的话，HTML是用于搭建骨架的，使我们盖的房子有一个大概的样子；CSS是用来装修房子的，让我们的房子变得漂亮，变得五颜六色；JS是用来将我们房子拥有许多功能（实现一些动态效果），他能够提供了许多的动作，比如我们能够做饭、洗澡、洗衣服等等。————–CSDN</p>
-<p>javascript主要是为了实现在前端页面显示的一些动态效果.它也是一门非常强大的语言,不仅可以写前端页面,也可以编写后端.可以说非常的强大,语言的兼容性非常的好,不会轻易的报错.——-博客园</p>
-<p>（一）简介（JS）<br>1).JavaScript（JS）是一种网页脚本语言。<br>通过在HTML网页中直接嵌入JS脚本，可以实现响应浏览器事件，读写HTML元素内容，更改HTML元素样式等功能。JS代码可以很容易的嵌入html页面中。也可以单独将JS代码写在一个文件中。浏览器对JS脚本程序进行解释执行。</p>
-<p>基本写法：</p>
-<p>javascript代码块<br>或者<br>短代码</p>
-<p>2).一个完整的 JavaScript 实现是由以下 3 个不同部分组成<br>1.核心（ECMAScript）<br>2.文档对象模型（DOM） Document object model (整合js，css，html)<br>3.浏览器对象模型（BOM） Broswer object model（整合js和浏览器）<br>Javascript 在开发中绝大多数情况是基于对象的.也是面向对象的.<br>（二）JavaScript内置对象<br>（1）window:负责操作浏览器窗口，负责窗口的状态，开/闭等。<br>（2）document：负责操作浏览器载入的文档（html文件），从属于window。<br>（3）history：可以代替后退（前进）按钮访问历史记录，从属于window。<br>（4）location：访问地址栏，也从属于window。</p>
+                <h2 id="1-Map接口概述："><a href="#1-Map接口概述：" class="headerlink" title="1.Map接口概述："></a>1.<strong>Map接口概述</strong>：</h2><ul>
+<li>Map与Collection并列存在，用于保存具有<strong>映射关系</strong>的数据：key-value</li>
+<li>Map中的key和value都可以是任何引用类型的数据。</li>
+<li>Map中的key用Set来存放，不允许重复，即同一个Map对象所对应的类，须重写hashCode()和equlas() 方法，</li>
+<li>常用String类作为Map的 “键” (key)</li>
+<li>key和value之间存在单向一对一的关系，即通过指定的key总能找到唯一的、确定的value</li>
+<li>Map接口的常用实现类：HashMap、TreeMap、LinkedHashMap和Properties。其中，<strong>HashMap</strong>是Map接口使用频率最高的实现类</li>
+</ul>
+<h2 id="2-Map实现类结构"><a href="#2-Map实现类结构" class="headerlink" title="2.Map实现类结构"></a>2.Map实现类结构</h2><ul>
+<li><p>Map</p>
+<p>：存储双列数据，存储key-value对的数据，类似函数的概念</p>
+<ul>
+<li><p>HashMap</p>
+<p>：作为Map的主要实现类：线程不安全，效率高，可以存储null的key和value</p>
+<ul>
+<li><strong>LinkedHashMap</strong>：能保证在遍历map元素时，可以按照添加的顺序进行遍历。实现方法是在原有的HashMap底层结构的基础上添加了一对指针，指向前一个和后一个元素。对于频繁遍历的操作，此类执行效率高于HashMap。</li>
+</ul>
+</li>
+<li><p><strong>TreeMap</strong>：（有序）保证按照添加的key-value对进行排序，实现排序遍历，此时使用key的自然排序和定制排序底层使用红黑树。</p>
+</li>
+<li><p>HashTable</p>
+<p>：作为古老实现类，线程安全，效率低不能存储null的key和value</p>
+<ul>
+<li><strong>Properties</strong>：常用来处理配置文件，key和value都是String类型。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="http://121.199.69.187/wp-content/uploads/2020/10/Snipaste_2020-10-12_14-55-34-1024x662.png" alt="img">Map接口结构</p>
+<p><strong>Map的常用方法：</strong></p>
+<p>1.<strong>添加、删除、修改操作：</strong> </p>
+<ol>
+<li>Object put(Object key,Object value)：将指定key-value添加到(或修改)当前map对象中 </li>
+<li>void putAll(Map m):将m中的所有key-value对存放到当前map中</li>
+<li>Object remove(Object key)：移除指定key的key-value对，并返回value </li>
+<li>void clear()：清空当前map中的所有数据 </li>
+</ol>
+<p>2.<strong>元素查询的操作：</strong> </p>
+<ol>
+<li>Object get(Object key)：获取指定key对应的value </li>
+<li>boolean containsKey(Object key)：是否包含指定的key</li>
+<li>boolean containsValue(Object value)：是否包含指定的value </li>
+<li>int size()：返回map中key-value对的个数 </li>
+<li>boolean isEmpty()：判断当前map是否为空 </li>
+<li>boolean equals(Object obj)：判断当前map和参数对象obj是否相等</li>
+</ol>
+<p>3.<strong>元视图操作的方法：</strong></p>
+<ol>
+<li>Set keySet()：返回所有key构成的Set集合</li>
+<li>Collection values()：返回所有value构成的Collection集合</li>
+<li>Set entrySet()：返回所有key-value对构成的Set集合</li>
+</ol>
+<h2 id="3-Map实现类之一：HashMap"><a href="#3-Map实现类之一：HashMap" class="headerlink" title="3.Map实现类之一：HashMap"></a>3.Map实现类之一：HashMap</h2><ol>
+<li>HashMap是 Map接口<strong>使用频率最高</strong>的实现类。</li>
+<li>允许使用null键和null值，与HashSet一样，不保证映射的顺序。</li>
+<li>所有的<strong>key</strong>构成的集合是<strong>Set</strong>:无序的、不可重复的。所以，key所在的类要重写： equals()和hashCode()</li>
+<li>所有的<strong>value</strong>构成的集合是<strong>Collection</strong>:无序的、可以重复的。所以,value所在的类要重写equals()</li>
+<li>一个key-value构成一个entry</li>
+<li>所有的entry构成的集合是Set:无序的、不可重复的</li>
+<li>HashMap 判断两个 key 相等的标准是：两个 key 通过 equals() 方法返回 true，且hashCode 值也相等。</li>
+<li>HashMap判断两个 key 相等的标准是：两个 value 通过 equals() 方法返回 true。</li>
+</ol>
+<p><img src="http://121.199.69.187/wp-content/uploads/2020/10/Snipaste_2020-10-15_19-28-31-1024x647.png" alt="img"></p>
+<h3 id="3-1-HashMap的存储结构与底层实现原理（重点）"><a href="#3-1-HashMap的存储结构与底层实现原理（重点）" class="headerlink" title="3.1 HashMap的存储结构与底层实现原理（重点）"></a>3.1 HashMap的存储结构与底层实现原理（重点）</h3><p>JDK 7 及以前版本：HashMap是数组+链表结构(即为链地址法) </p>
+<p><img src="http://121.199.69.187/wp-content/uploads/2020/10/Snipaste_2020-10-15_20-16-54-1024x546.png" alt="img"></p>
+<p>JDK 8 版本发布以后：HashMap是<strong>数组+链表+红黑树</strong>实现。</p>
+<p><img src="http://121.199.69.187/wp-content/uploads/2020/10/Snipaste_2020-10-15_20-20-21-1024x371.png" alt="img"></p>
+<p><strong>HashMap的底层实现原理：</strong></p>
+<p>以JDK 7为例，我们先把添加数据的过程简要分析一下：</p>
+<p>先新new一个HashMap：<em>HashMap map = new HashMap( );</em> </p>
+<p>在实例化之后，底层创建了长度是16的一维数组：<em>Entry[ ] table</em></p>
+<p>然后就该向map中添加元素(Entry)了：调用 <em>map.put(key1,value1);</em></p>
+<p>调用key1所在类的*hashCode( )*；计算key1的哈希值，此值经过某种计算后得到在Entry数组中存放的位置</p>
+<p>此位置上是否有元素</p>
+<p>如果此位置上的数据为空，则此时key1-value1添加成功 —-&gt;情况 1</p>
+<p>如果此位置上的数据不为空，意味着此位置上存在一个或多个数据（以链表形式存在），比较key1和已经存在的一个或多个数据的哈希值</p>
+<p>key1的哈希值与已经存在的数据哈希值异同</p>
+<p>如果key1和已有数据哈希值都不相同，则此时key1-value1添加成功。—-&gt;情况2</p>
+<p>如果key1和已有数据的某一个哈希值相同（key2-value2），继续比较，调用key1所在类的*equals(key2-value2)*比较</p>
+<p>equals(key2-value2)比较结果</p>
+<p>如果返回false，key1-value1添加成功 —-&gt; 情况3</p>
+<p>如果返回true，使用value1替换value2。</p>
+<p>补充：关于情况2和情况3，此时key1-value1和原来的数据以链表形式存储；在不断添加的过程中，会涉及到扩容问题，当超出临界值（且要存放的位置非空），默认的扩容方式为原来的容量的两倍，并将原有的数据复制过来。</p>
+<p>jdk8相较于jdk7在底层实现方面的不同：</p>
+<ul>
+<li>new HashMap();底层没有创建一个长度为16的数组 </li>
+<li>jdk8底层的数组是Node类型的数组，而非entry数组 </li>
+<li><strong>首次调用put()时，底层创建长度为16的数组</strong> </li>
+<li>jdk7底层结构只有数组+链表；jdk8中底层结构：<strong>数组+链表+红黑树</strong> </li>
+<li>jdk8使用红黑树的情况：<strong>当数组的某一个索引位置上的元素以链表形式存在的数据个数 &gt; 8 且当前数组的长度 &gt; 64时</strong>，此时此索引位置上的所有数据改为使用红黑树存储</li>
+</ul>
+<p><em>如果向更深入了解HashMap的底层知识，请深吸一口气，点开下面的折叠条。</em></p>
+<p>HashMap分析</p>
+<p><strong>HR：谈谈你对HashMap中put/get方法的认识？如果了解再谈谈 HashMap的扩容机制？默认大小是多少？什么是负载因子( 或填充比)？什么是吞吐临界值(或阈值、threshold)？</strong></p>
+<p><strong>HR：负载因子值的大小，对HashMap有什么影响</strong></p>
+<ol>
+<li>负载因子的大小决定了HashMap的数据密度。 </li>
+<li>负载因子越大密度越大，发生碰撞的几率越高，数组中的链表越容易长, 造成查询或插入时的比较次数增多，性能会下降。 </li>
+<li>负载因子越小，就越容易触发扩容，数据密度也越小，意味着发生碰撞的 几率越小，数组中的链表也就越短，查询和插入时比较的次数也越小，性能会更高。但是会浪费一定的内容空间。而且经常扩容也会影响性能，建 议初始化预设大一点的空间。 </li>
+<li>按照其他语言的参考及研究经验，会考虑将负载因子设置为0.7~0.75，此 时平均检索长度接近于常数。</li>
+</ol>
+<h2 id="4-Map的实现类之二：LinkedHashMap"><a href="#4-Map的实现类之二：LinkedHashMap" class="headerlink" title="4.Map的实现类之二：LinkedHashMap"></a>4.Map的实现类之二：LinkedHashMap</h2><ol>
+<li>LinkedHashMap是HashMap的子类</li>
+<li>再HashMap的存储结构基础上，使用了一对双向链表来记录添加元素的顺序</li>
+<li>与LinkedHashSet类似，LinkedHashMap 可以维护 Map 的迭代顺序：迭代顺序与 Key-Value 对的插入顺序一致</li>
+</ol>
+<p><strong>LinkedHashMap的Entry：</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">static class Entry&lt;K,V&gt; extends HashMap.Node&lt;K,V&gt; {
+    Entry&lt;K,V&gt; before, after;//能够记录添加的元素的先后顺序
+    Entry(int hash, K key, V value, Node&lt;K,V&gt; next) {
+        super(hash, key, value, next);
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>HashMap的Node：</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">static class Node&lt;K,V&gt; implements Map.Entry&lt;K,V&gt; {
+   final int hash;
+   final K key;
+   V value;
+   Node&lt;K,V&gt; next;
+ }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="5-Map的实现类之三：TreeMap"><a href="#5-Map的实现类之三：TreeMap" class="headerlink" title="5.Map的实现类之三：TreeMap"></a>5.Map的实现类之三：TreeMap</h2><ol>
+<li><p>TreeMap存储 Key-Value 对时，需要根据 key-value 对进行排序。 TreeMap 可以保证所有的 Key-Value 对处于<strong>有序</strong>状态。 </p>
+</li>
+<li><p>TreeSet底层使用<strong>红黑树</strong>结构存储数据 </p>
+</li>
+<li><p>TreeMap 的 Key 的排序：</p>
+</li>
+</ol>
+<ul>
+<li><strong>自然排序</strong>：TreeMap 的所有的 Key 必须实现 Comparable 接口，而且所有的 Key 应该是同一个类的对象，否则将会抛出 ClasssCastException </li>
+<li><strong>定制排序</strong>：创建 TreeMap 时，传入一个 Comparator 对象，该对象负责对 TreeMap 中的所有 key 进行排序。此时不需要 Map 的 Key 实现 Comparable 接口 </li>
+</ul>
+<ol start="4">
+<li>TreeMap判断<strong>两个key相等的标准</strong>：两个key通过compareTo()方法或 者compare()方法返回0。</li>
+</ol>
+<ul>
+<li><strong>TreeMap的自然排序：</strong></li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">public void test()  {
+    TreeMap map=new TreeMap();
+    Person p1=new Person("tom",10);
+    Person p2=new Person("jack",15);
+    Person p3=new Person("jerry",14);
+    Person p4=new Person("hell",16);
+    Person p5=new Person("duck",19);
+    map.put(p1,95);
+    map.put(p2,98);
+    map.put(p3,99);
+    map.put(p4,100);
+    map.put(p5,92);
+ 
+    Set entrySet=map.entrySet();
+    Iterator iterator1 = entrySet.iterator();
+    while (iterator1.hasNext()){
+        Object obj =iterator1.next();
+        //entrySet集合中元素都是entry
+        Map.Entry entry =(Map.Entry) obj;
+        System.out.println(entry.getKey()+"----&gt;"+entry.getValue());
+    }
+ 
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><strong>TreeMap的定制排序：</strong></li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">public void test1(){
+        TreeMap map=new TreeMap(new Comparator() {
+            @Override
+            public int compare(Object o1, Object o2) {
+                if (o1 instanceof Person &amp;&amp; o2 instanceof Person){
+                    Person p1=(Person) o1;
+                    Person p2=(Person) o2;
+                    return Integer.compare(p1.getAge(),p2.getAge());
+ 
+                }
+                throw new RuntimeException("输入的类型有误");
+            }
+        });
+        Person p1=new Person("tom",10);
+        Person p2=new Person("jack",15);
+        Person p3=new Person("jerry",14);
+        Person p4=new Person("hell",16);
+        Person p5=new Person("duck",19);
+        map.put(p1,95);
+        map.put(p2,98);
+        map.put(p3,99);
+        map.put(p4,100);
+        map.put(p5,92);
+ 
+        Set entrySet=map.entrySet();
+        Iterator iterator1 = entrySet.iterator();
+        while (iterator1.hasNext()){
+            Object obj =iterator1.next();
+            //entrySet集合中元素都是entry
+            Map.Entry entry =(Map.Entry) obj;
+            System.out.println(entry.getKey()+"----&gt;"+entry.getValue());
+        }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="6-Map实现类之四：Hashtable"><a href="#6-Map实现类之四：Hashtable" class="headerlink" title="6.Map实现类之四：Hashtable"></a><strong>6.Map实现类之四：Hashtable</strong></h2><ol>
+<li>Hashtable是个古老的 Map 实现类，JDK1.0就提供了。</li>
+<li>不同于HashMap， Hashtable是<strong>线程安全</strong>的。 </li>
+<li>Hashtable实现原理和HashMap相同，功能相同。底层都使用<strong>哈希表</strong>结构，<strong>查询速度快</strong>，很多情况下可以互用。 </li>
+<li>与HashMap不同，Hashtable <strong>不允许使用 null 作为 key 和 value</strong></li>
+<li>与HashMap一样，Hashtable 也<strong>不能保证其中 Key-Value 对的顺序</strong></li>
+<li>Hashtable判断两个key相等、两个value相等的标准，与HashMap一致。</li>
+</ol>
+<h2 id="7-Map实现类之五：Properties"><a href="#7-Map实现类之五：Properties" class="headerlink" title="7.Map实现类之五：Properties"></a>7.<strong>Map实现类之五：Properties</strong></h2><ul>
+<li>Properties 类是 Hashtable 的子类，该对象用于处理属性文件 </li>
+<li>由于属性文件里的 key、value 都是字符串类型，所以 Properties 里的 key 和 value 都是字符串类型</li>
+<li>存取数据时，建议使用setProperty(String key,String value)方法和 getProperty(String key)方法</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">Properties pros = new Properties();
+  pros.load(new FileInputStream("jdbc.properties"));
+  String user = pros.getProperty("user");
+  System.out.println(user);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>关于Properties的练习</strong></p>
+<p>第一步，在IDEA中创建一个名为xxx.properties的文档，这里以jdbc.properties为例</p>
+<p><img src="/.io//svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+" alt="img">properties文件</p>
+<p>然后在文档里写入数据，以key-value的形式</p>
+<p><img src="/.io//svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+" alt="img"></p>
+<p>其中，name为key；age为value。</p>
+<p>然后创建一个测试类</p>
+<pre class="line-numbers language-none"><code class="language-none">package JavaSenior.CollectionTest.Map;
+ 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.net.PasswordAuthentication;
+import java.sql.JDBCType;
+import java.util.Properties;
+ 
+/**
+ * @author du guodong
+ * @create 2020-10-08-9:22
+ */
+public class PropertiesTest {
+    public static void main(String[] args)  {
+        FileInputStream fis = null;
+        try {
+            Properties pros = new Properties();
+            fis = new FileInputStream("jdbc.properties");
+            pros.load(fis);//加载流对应的文件
+            String name = pros.getProperty("name");
+            String age = pros.getProperty("age");
+ 
+            System.out.println(name+ "==&gt;"+age);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally {
+            if (fis!=null){
+                try {
+                    fis.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+ 
+    }
+ 
+}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>运行测试即可，详细的讲解以后补充。</p>
 
                 
             </div>
@@ -453,7 +718,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://konghaowen.github.io/2021/05/12/qian-duan-san-jian-ke-javascript/">http://konghaowen.github.io/2021/05/12/qian-duan-san-jian-ke-javascript/</a>
+                    <a href="http://konghaowen.github.io/2021/05/31/map/">http://konghaowen.github.io/2021/05/31/map/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -684,13 +949,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/05/12/qian-duan-san-jian-ke-html/">
+                <a href="/2021/05/31/java-ji-he/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="Java 集合">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">Java 集合</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -701,12 +966,16 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-12
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-31
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Kong
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java-SE/" class="post-category">
+                                    Java SE
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -721,13 +990,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/05/12/tcpip/">
+                <a href="/2021/05/31/pychon-zhi-shi-zong-jie/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/medias/featureimages/2.jpg" class="responsive-img" alt="PYCHON知识总结">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">PYCHON知识总结</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -738,12 +1007,16 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-31
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Kong
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%A0%A1%E5%86%85%E5%A4%8D%E4%B9%A0%E8%B5%84%E6%96%99/" class="post-category">
+                                    校内复习资料
+                                </a>
+                            
                             
                         </span>
                     </div>

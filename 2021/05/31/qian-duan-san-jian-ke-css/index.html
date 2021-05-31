@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="代码小白的领地">
+    <meta name="keywords" content="关键字：CSS, 代码小白的领地">
     <meta name="description" content="专注于JAVA,分享生活,分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>代码小白的领地</title>
+    <title>关键字：CSS | 代码小白的领地</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/libs/awesome/css/all.css">
@@ -249,12 +249,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title"></h1>
+                    <h1 class="description center-align post-title">关键字：CSS</h1>
                 </div>
             </div>
         </div>
@@ -375,6 +375,15 @@
                 </div>
                 <div class="col s5 right-align">
                     
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                前端
+                            </a>
+                        
+                    </div>
+                    
                 </div>
             </div>
 
@@ -382,7 +391,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-05-12
+                    2021-05-31
                 </div>
                 
 
@@ -391,14 +400,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    846
+                    447
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    1 分
                 </div>
                 
 
@@ -421,46 +430,34 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>JSON：一种轻量的数据交换格式。</p>
-<h2 id="集合分为-Collection-和-Map-两种体系"><a href="#集合分为-Collection-和-Map-两种体系" class="headerlink" title="集合分为 Collection 和 Map 两种体系"></a>集合分为 Collection 和 Map 两种体系</h2><h2 id="1-collection接口："><a href="#1-collection接口：" class="headerlink" title="1.collection接口："></a>1.collection接口：</h2><p>单列数据，定义存取一组对象的方法的集合</p>
-<p>List：元素有序，可以重复的集合</p>
-<p>Set：元素无序，不可以重复的集合</p>
-<p>Collection接口是List，Set，Queue接口的父接口。</p>
-<p>接口的方法：</p>
+                <p>如果拿盖房子做比喻的话，HTML是用于搭建骨架的，使我们盖的房子有一个大概的样子；CSS是用来装修房子的，让我们的房子变得漂亮，变得五颜六色；JS是用来将我们房子拥有许多功能（实现一些动态效果），他能够提供了许多的动作，比如我们能够做饭、洗澡、洗衣服等等。————–CSDN</p>
+<ol>
+<li>概念： Cascading Style Sheets 层叠样式表</li>
+</ol>
 <ul>
-<li>add(Object obj); 添加元素</li>
-<li>addAll(Collection coll); 添加一个Collection类型的集合</li>
-<li>int size(); 获取有效元素的个数</li>
-<li>void clear(); 清空集合</li>
-<li>boolean isEmpty();是否为空集合</li>
-<li>boolean contains(Object obj); 通过调用元素所在类的equals()方法来判断是否是同一个对象。</li>
-<li>boolean containsAll(Collection c); 调用元素所在类的equals()方法来比较，用两个集合元素依次比较。</li>
-<li>boolean remove(Object obj); 通过元素的equals()方法判断是否是要删除的元素，只会删除找到的第一个元素。</li>
-<li>boolean removeAll(Collection coll); 取当前集合的差集</li>
-<li>boolean retainAll(Collection c); 把交集的结果存在当前集合中，不影响 c</li>
-<li>boolean equals(Object obj); 判断集合是否相等</li>
-<li>Object[] toArray(); 转成对象数组</li>
-<li>hashCode(); 获取集合对象的哈希值</li>
-<li>iterator(); 返回迭代器对象，用于集合遍历</li>
+<li>层叠：多个样式可以作用在同一个html的元素上，同时生效<br>​ 用于控制网页样式</li>
 </ul>
-<h2 id="2-Map接口："><a href="#2-Map接口：" class="headerlink" title="2.Map接口："></a>2.Map接口：</h2><p>双列数据，保存具有映射关系“key-value对”的集合。</p>
-<p><strong>Iterator迭代器接口</strong></p>
-<p><strong>使用 Iterator 接口遍历集合元素</strong></p>
-<p>Iterator对象称为迭代器(设计模式的一种)，主要用于遍历 Collection 集合中的元素。</p>
-<p>GOF给迭代器模式的定义为：提供一种方法访问一个容器(container)对象中各个元 素，而又不需暴露该对象的内部细节。<strong>迭代器模式，就是为容器而生。</strong>类似于“公交车上的售票员”、“火车上的乘务员”、“空姐”。</p>
-<p>Collection接口继承了java.lang.Iterable接口，该接口有一个iterator()方法，那么所 有实现了Collection接口的集合类都有一个iterator()方法，用以返回一个实现了 Iterator接口的对象。</p>
-<p>Iterator 仅用于遍历集合，Iterator 本身并不提供承装对象的能力。如果需要创建 Iterator 对象，则必须有一个被迭代的集合。</p>
-<p>集合对象每次调用iterator()方法都得到一个全新的迭代器对象，默认游标都在集合的第一个元素之前。</p>
-<p>在调用it.next()方法之前必须要调用it.hasNext()进行检测。若不调用，且 下一条记录无效，直接调用it.next()会抛出NoSuchElementException异常。</p>
-<p><em>Iterator和ListIterator的异同点</em></p>
-<pre class="line-numbers language-none"><code class="language-none">一．相同点
-都是迭代器，当需要对集合中元素进行遍历不需要干涉其遍历过程时，这两种迭代器都可以使用。
-二．不同点
-1.使用范围不同，Iterator可以应用于所有的集合，Set、List和Map和这些集合的子类型。而ListIterator只能用于List及其子类型。
-2.ListIterator有add方法，可以向List中添加对象，而Iterator不能。
-3.ListIterator和Iterator都有hasNext()和next()方法，可以实现顺序向后遍历，但是ListIterator有hasPrevious()和previous()方法，可以实现逆向（顺序向前）遍历。Iterator不可以。
-4.ListIterator可以定位当前索引的位置，nextIndex()和previousIndex()可以实现。Iterator没有此功能。
-5.都可实现删除操作，但是ListIterator可以实现对象的修改，set()方法可以实现。Iterator仅能遍历，不能修改。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol>
+<li>好处：</li>
+<li>功能强大</li>
+<li>将内容展示和样式控制分离</li>
+</ol>
+<ul>
+<li>降低耦合度,解耦</li>
+<li>让分工协作更容易</li>
+<li>提高开发效率</li>
+</ul>
+<p>1，内嵌式<br>内嵌式是将CSS代码集中写在HTML文档的头部标签中，并用style标记定义<br>基本语法如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;style type = "text/css"&gt; 
+ 
+                                            选择器{属性1：属性值2；属性2：属性值2；属性3：属性值3}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>2，链入式<br>链入式是将所有的样式放在一个或多个以CSS为拓展名的外部样式表文件中，通过标记将外部样式表文件链接到html文件中</p>
+<p>基本语法如下</p>
+<p>3，CSS选择器和常用属性<br>（1），标记选择器<br>基本语法如下：</p>
+<p>标记名{属性1：属性值1；属性2：属性值2；属性值3：属性值3；}<br>（2），类选择器<br>基本语法如下：</p>
+<p>.类名{属性1：属性值1；属性2：属性值2；属性值3：属性值3；}<br>（3），id选择器<br>基本语法如下：</p>
+<p>#id{属性1：属性值1；属性2：属性值2；属性值3：属性值3；}<br>（4），通配符选择器<br>基本语法如下：</p>
+
                 
             </div>
             <hr/>
@@ -486,7 +483,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://konghaowen.github.io/2021/05/12/java-ji-he/">http://konghaowen.github.io/2021/05/12/java-ji-he/</a>
+                    <a href="http://konghaowen.github.io/2021/05/31/qian-duan-san-jian-ke-css/">http://konghaowen.github.io/2021/05/31/qian-duan-san-jian-ke-css/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -717,13 +714,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/05/12/mei-ju/">
+                <a href="/2021/05/31/tcpip/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/medias/featureimages/3.jpg" class="responsive-img" alt="TCP/IP">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">TCP/IP</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -734,12 +731,16 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-12
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-31
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Kong
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-category">
+                                    计算机网络
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -754,13 +755,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/04/28/mac-duan/">
+                <a href="/2021/05/31/qian-duan-san-jian-ke-html/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="mac端">
+                        <img src="https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/medias/featureimages/1.jpg" class="responsive-img" alt="关键字：HTML">
                         
-                        <span class="card-title">mac端</span>
+                        <span class="card-title">关键字：HTML</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -771,12 +772,16 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-31
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Kong
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                            
                             
                         </span>
                     </div>

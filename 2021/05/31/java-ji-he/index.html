@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="代码小白的领地">
+    <meta name="keywords" content="Java 集合, 代码小白的领地">
     <meta name="description" content="专注于JAVA,分享生活,分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>代码小白的领地</title>
+    <title>Java 集合 | 代码小白的领地</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/libs/awesome/css/all.css">
@@ -254,7 +254,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title"></h1>
+                    <h1 class="description center-align post-title">Java 集合</h1>
                 </div>
             </div>
         </div>
@@ -375,6 +375,15 @@
                 </div>
                 <div class="col s5 right-align">
                     
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Java-SE/" class="post-category">
+                                Java SE
+                            </a>
+                        
+                    </div>
+                    
                 </div>
             </div>
 
@@ -382,7 +391,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-05-20
+                    2021-05-31
                 </div>
                 
 
@@ -391,14 +400,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    181
+                    846
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -421,24 +430,46 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="PYCHON知识总结"><a href="#PYCHON知识总结" class="headerlink" title="PYCHON知识总结"></a>PYCHON知识总结</h1><p>1.概述：    python的特点 </p>
-<p>2.python关键字</p>
-<p>3.python数据类型  整型 浮点型 字符型。</p>
-<ol start="4">
-<li>python运算符 算法 关系 逻辑 优先级</li>
-<li>python的程序结构  顺序结构 循环结构 字符串的操作：print 切片 </li>
-<li>列表 字典  集合 元类型 及操作</li>
-<li>函数 def ……    递归调用 </li>
-<li>文件的操作  打开（相对路径 绝对路径）。</li>
-<li>第三方库   pip install 库名称</li>
-<li>异常 try——了解即可</li>
-<li>面向对象编程   声明一个类（成员函数 成员变量）</li>
-<li>成员的可变性如何实现   公有 私有 – 保护 - 系统的 __ xxx__ </li>
-<li>类的构造方法  __ init __():</li>
-<li>类的继承   class（A）.   </li>
-</ol>
-<p>1个作业  2个   3个是类</p>
-
+                <p>JSON：一种轻量的数据交换格式。</p>
+<h2 id="集合分为-Collection-和-Map-两种体系"><a href="#集合分为-Collection-和-Map-两种体系" class="headerlink" title="集合分为 Collection 和 Map 两种体系"></a>集合分为 Collection 和 Map 两种体系</h2><h2 id="1-collection接口："><a href="#1-collection接口：" class="headerlink" title="1.collection接口："></a>1.collection接口：</h2><p>单列数据，定义存取一组对象的方法的集合</p>
+<p>List：元素有序，可以重复的集合</p>
+<p>Set：元素无序，不可以重复的集合</p>
+<p>Collection接口是List，Set，Queue接口的父接口。</p>
+<p>接口的方法：</p>
+<ul>
+<li>add(Object obj); 添加元素</li>
+<li>addAll(Collection coll); 添加一个Collection类型的集合</li>
+<li>int size(); 获取有效元素的个数</li>
+<li>void clear(); 清空集合</li>
+<li>boolean isEmpty();是否为空集合</li>
+<li>boolean contains(Object obj); 通过调用元素所在类的equals()方法来判断是否是同一个对象。</li>
+<li>boolean containsAll(Collection c); 调用元素所在类的equals()方法来比较，用两个集合元素依次比较。</li>
+<li>boolean remove(Object obj); 通过元素的equals()方法判断是否是要删除的元素，只会删除找到的第一个元素。</li>
+<li>boolean removeAll(Collection coll); 取当前集合的差集</li>
+<li>boolean retainAll(Collection c); 把交集的结果存在当前集合中，不影响 c</li>
+<li>boolean equals(Object obj); 判断集合是否相等</li>
+<li>Object[] toArray(); 转成对象数组</li>
+<li>hashCode(); 获取集合对象的哈希值</li>
+<li>iterator(); 返回迭代器对象，用于集合遍历</li>
+</ul>
+<h2 id="2-Map接口："><a href="#2-Map接口：" class="headerlink" title="2.Map接口："></a>2.Map接口：</h2><p>双列数据，保存具有映射关系“key-value对”的集合。</p>
+<p><strong>Iterator迭代器接口</strong></p>
+<p><strong>使用 Iterator 接口遍历集合元素</strong></p>
+<p>Iterator对象称为迭代器(设计模式的一种)，主要用于遍历 Collection 集合中的元素。</p>
+<p>GOF给迭代器模式的定义为：提供一种方法访问一个容器(container)对象中各个元 素，而又不需暴露该对象的内部细节。<strong>迭代器模式，就是为容器而生。</strong>类似于“公交车上的售票员”、“火车上的乘务员”、“空姐”。</p>
+<p>Collection接口继承了java.lang.Iterable接口，该接口有一个iterator()方法，那么所 有实现了Collection接口的集合类都有一个iterator()方法，用以返回一个实现了 Iterator接口的对象。</p>
+<p>Iterator 仅用于遍历集合，Iterator 本身并不提供承装对象的能力。如果需要创建 Iterator 对象，则必须有一个被迭代的集合。</p>
+<p>集合对象每次调用iterator()方法都得到一个全新的迭代器对象，默认游标都在集合的第一个元素之前。</p>
+<p>在调用it.next()方法之前必须要调用it.hasNext()进行检测。若不调用，且 下一条记录无效，直接调用it.next()会抛出NoSuchElementException异常。</p>
+<p><em>Iterator和ListIterator的异同点</em></p>
+<pre class="line-numbers language-none"><code class="language-none">一．相同点
+都是迭代器，当需要对集合中元素进行遍历不需要干涉其遍历过程时，这两种迭代器都可以使用。
+二．不同点
+1.使用范围不同，Iterator可以应用于所有的集合，Set、List和Map和这些集合的子类型。而ListIterator只能用于List及其子类型。
+2.ListIterator有add方法，可以向List中添加对象，而Iterator不能。
+3.ListIterator和Iterator都有hasNext()和next()方法，可以实现顺序向后遍历，但是ListIterator有hasPrevious()和previous()方法，可以实现逆向（顺序向前）遍历。Iterator不可以。
+4.ListIterator可以定位当前索引的位置，nextIndex()和previousIndex()可以实现。Iterator没有此功能。
+5.都可实现删除操作，但是ListIterator可以实现对象的修改，set()方法可以实现。Iterator仅能遍历，不能修改。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -464,7 +495,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://konghaowen.github.io/2021/05/20/pychon-zhi-shi-zong-jie/">http://konghaowen.github.io/2021/05/20/pychon-zhi-shi-zong-jie/</a>
+                    <a href="http://konghaowen.github.io/2021/05/31/java-ji-he/">http://konghaowen.github.io/2021/05/31/java-ji-he/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -696,13 +727,13 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2021/05/20/pychon-zhi-shi-zong-jie/">
+                <a href="/2021/05/31/java-ji-he/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="Java 集合">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">Java 集合</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -713,12 +744,16 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-31
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Kong
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java-SE/" class="post-category">
+                                    Java SE
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -734,13 +769,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/05/18/map/">
+                <a href="/2021/05/31/map/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/medias/featureimages/4.jpg" class="responsive-img" alt="MAP">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">MAP</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -751,12 +786,16 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-18
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-31
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Kong
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java-SE/" class="post-category">
+                                    Java SE
+                                </a>
+                            
                             
                         </span>
                     </div>

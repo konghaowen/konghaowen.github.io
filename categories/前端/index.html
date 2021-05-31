@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="代码小白的领地">
+    <meta name="keywords" content="分类: 前端, 代码小白的领地">
     <meta name="description" content="专注于JAVA,分享生活,分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>代码小白的领地</title>
+    <title>分类: 前端 | 代码小白的领地</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/libs/awesome/css/all.css">
@@ -245,56 +245,9 @@
 
 </header>
 
-    
-<style>
-    .carousel-control {
-        width: 45px;
-        height: 45px;
-        line-height: 55px;
-        border-radius: 45px;
-        background: transparent;
-        cursor: pointer;
-        z-index: 100;
-    }
-
-    #prev-cover {
-        position: absolute;
-        top: 48%;
-        left: 8px;
-    }
-
-    #next-cover {
-        position: absolute;
-        top: 48%;
-        right: 8px;;
-    }
-
-    #prev-cover i {
-        margin-right: 3px;
-    }
-
-    #next-cover i {
-        margin-left: 3px;
-    }
-
-    .carousel-control:hover {
-        background-color: rgba(0, 0, 0, .4);
-    }
-
-    .carousel-control i {
-        color: #fff;
-        font-size: 2.4rem;
-    }
-</style>
-
-
-
-<div class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px;">
-    
-
-    <div class="carousel-item red white-text bg-cover about-cover">
-        <div class="container">
-            <div class="row">
+    <div class="bg-cover pd-header about-cover">
+    <div class="container">
+    <div class="row">
     <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
         <div class="brand">
             <div class="title center-align">
@@ -330,423 +283,101 @@
 </script>
 
 
-
-            <div class="cover-btns">
-                <a href="#indexCard" class="waves-effect waves-light btn">
-                    <i class="fa fa-angle-double-down"></i>开始阅读
-                </a>
-
-                
-            </div>
-            <div class="cover-social-link">
-    <a href="https://github.com/konghaowen" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-        <i class="fab fa-github"></i>
-    </a>
-
-
-
-    <a href="mailto:965512505@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-        <i class="fas fa-envelope-open"></i>
-    </a>
-
-
-
-
-
-
-
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=965512505" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 965512505" data-position="top" data-delay="50">
-        <i class="fab fa-qq"></i>
-    </a>
-
-
-
-
-
-
-
-    <a href="/medias/VX.jpg" class="tooltipped" target="_blank" data-tooltip="微信联系我: /medias/VX.jpg" data-position="top" data-delay="50">
-        <i class="fab fa-weixin"></i>
-    </a>
-
-
-
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
-    </a>
-
-
-</div>
-        </div>
     </div>
-
-    
 </div>
-
-<script>
-    $(function () {
-        let coverSlider = $('.carousel');
-
-        //用户触摸轮播自动 restartPlay 是否生效
-        let initUserPressedOrDraggedActive = false
-
-        //用户触摸轮播自动 restartPlay
-        function initUserPressedOrDragged(instance) {
-            setInterval(() => {
-                if (instance.pressed || instance.dragged) {
-                    // console.log('initUserPressedOrDragged: ',instance.pressed,instance.dragged)
-                    restartPlay()
-                }
-            }, 1000)
-        }
-
-        coverSlider.carousel({
-            duration: Number('120'),
-            fullWidth: true,
-            indicators: 'true' === 'true',
-            onCycleTo() {
-                if (!initUserPressedOrDraggedActive) {
-                    // console.log('initUserPressedOrDraggedActive')
-                    initUserPressedOrDragged(this)
-                    initUserPressedOrDraggedActive = true
-                }
-            },
-        })
-
-        let carouselIntervalId;
-        
-        // Loop to call the next cover article picture.
-        let autoCarousel = function () {
-            carouselIntervalId = setInterval(function () {
-                coverSlider.carousel('next');
-            }, 5000);
-        };
-        autoCarousel();
-        
-
-        function restartPlay() {
-            
-            clearInterval(carouselIntervalId);
-            autoCarousel();
-            
-        };
-
-        
-        // prev and next cover post.
-        $('#prev-cover').click(function () {
-            coverSlider.carousel('prev');
-            restartPlay();
-        });
-        $('#next-cover').click(function () {
-            coverSlider.carousel('next');
-            restartPlay();
-        });
-        
-    });
-</script>
-
-
 
 <main class="content">
 
     
-    <div id="indexCard" class="index-card">
-        <div class="container ">
-            <div class="card">
-                <div class="card-content">
-                    
-                        <div class="dream">
-    
-    <div class="title center-align">
-        <i class="far fa-lightbulb"></i>&nbsp;&nbsp;code
-    </div>
-    
-    <div class="row">
-        <div class="col l8 offset-l2 m10 offset-m1 s10 offset-s1 center-align text">
-            编程是枯燥的，面对没有感情的机器只能独自前行。
+
+<div id="category-cloud" class="container chip-container">
+    <div class="card">
+        <div class="card-content">
+            <div class="tag-title center-align">
+                <i class="fas fa-bookmark"></i>&nbsp;&nbsp;文章分类
+            </div>
+            <div class="tag-chips">
+                
+                
+                
+                <a href="/categories/Java-SE/" title="Java SE: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F9EBEA;">Java SE
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/%E6%A0%A1%E5%86%85%E5%A4%8D%E4%B9%A0%E8%B5%84%E6%96%99/" title="校内复习资料: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F5EEF8;">校内复习资料
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" title="计算机网络: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #D5F5E3;">计算机网络
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/%E5%89%8D%E7%AB%AF/" title="前端: 3">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-active "
+                            style="background-color: #E8F8F5;">前端
+                        <span class="tag-length">3</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="数据结构: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #FEF9E7;">数据结构
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/%E5%90%8E%E7%AB%AF/" title="后端: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F8F9F9;">后端
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/Docker/" title="Docker: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #82E0AA;">Docker
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+            </div>
         </div>
     </div>
 </div>
 
-                    
-
-                    
-
-                    
-
-                    
-                    <div id="recommend-sections" class="recommend">
-                        
-
-
-
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-    
 
     
 
-    <!-- 所有文章卡片 -->
     <article id="articles" class="container articles">
-        <div class="row article-row">
+        <div class="row tags-posts">
             
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/05/31/java-ji-he/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="Java 集合">
-                            
-                            <span class="card-title">Java 集合</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                JSON：一种轻量的数据交换格式。
-集合分为 Collection 和 Map 两种体系1.collection接口：单列数据，定义存取一组对象的方法的集合
-List：元素有序，可以重复的集合
-Set：元素无序，不可以重复的集合
-Colle
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-31
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Java-SE/" class="post-category">
-                                    Java SE
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/05/31/map/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/medias/featureimages/4.jpg" class="responsive-img" alt="MAP">
-                            
-                            <span class="card-title">MAP</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                1.Map接口概述：
-Map与Collection并列存在，用于保存具有映射关系的数据：key-value
-Map中的key和value都可以是任何引用类型的数据。
-Map中的key用Set来存放，不允许重复，即同一个Map对象所对应的类，
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-31
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Java-SE/" class="post-category">
-                                    Java SE
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/05/31/pychon-zhi-shi-zong-jie/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/medias/featureimages/2.jpg" class="responsive-img" alt="PYCHON知识总结">
-                            
-                            <span class="card-title">PYCHON知识总结</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                1.概述：    python的特点 
-2.python关键字
-3.python数据类型  整型 浮点型 字符型。
-
-python运算符 算法 关系 逻辑 优先级
-python的程序结构  顺序结构 循环结构 字符串的操作：print 切片
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-31
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E6%A0%A1%E5%86%85%E5%A4%8D%E4%B9%A0%E8%B5%84%E6%96%99/" class="post-category">
-                                    校内复习资料
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/05/31/tcpip/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/medias/featureimages/3.jpg" class="responsive-img" alt="TCP/IP">
-                            
-                            <span class="card-title">TCP/IP</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                具体含义：1.指代2种协议. TCP和IP协议 2.IP进行通信时所必须用到的协议群的统称。
-特点：开放性  注重实用性（被标准化的协议能否被实际运用）
-分层模型物理层（硬件层）负责数据传输的硬件
-数据链路层（网络接口层）利用以太网中的数据
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-31
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-category">
-                                    计算机网络
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/05/31/qian-duan-san-jian-ke-css/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/medias/featureimages/3.jpg" class="responsive-img" alt="关键字：CSS">
-                            
-                            <span class="card-title">关键字：CSS</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                如果拿盖房子做比喻的话，HTML是用于搭建骨架的，使我们盖的房子有一个大概的样子；CSS是用来装修房子的，让我们的房子变得漂亮，变得五颜六色；JS是用来将我们房子拥有许多功能（实现一些动态效果），他能够提供了许多的动作，比如我们能够做饭、洗
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-31
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/05/31/qian-duan-san-jian-ke-html/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/medias/featureimages/1.jpg" class="responsive-img" alt="关键字：HTML">
-                            
-                            <span class="card-title">关键字：HTML</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                如果拿盖房子做比喻的话，HTML是用于搭建骨架的，使我们盖的房子有一个大概的样子；CSS是用来装修房子的，让我们的房子变得漂亮，变得五颜六色；JS是用来将我们房子拥有许多功能（实现一些动态效果），他能够提供了许多的动作，比如我们能够做饭、洗
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-31
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
                     <a href="/2021/05/31/qian-duan-san-jian-ke-javascript/">
-                        <div class="card-image">
+                        <div class="card-image tag-image">
                             
                             
                             <img src="https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/medias/featureimages/5.jpg" class="responsive-img" alt="关键字：JavaScript">
@@ -754,7 +385,6 @@ python的程序结构  顺序结构 循环结构 字符串的操作：print 切�
                             <span class="card-title">关键字：JavaScript</span>
                         </div>
                     </a>
-
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
@@ -782,23 +412,21 @@ python的程序结构  顺序结构 循环结构 字符串的操作：print 切�
                 </div>
             </div>
             
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/05/31/mybatis/">
-                        <div class="card-image">
+                    <a href="/2021/05/31/qian-duan-san-jian-ke-html/">
+                        <div class="card-image tag-image">
                             
                             
-                            <img src="https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/medias/featureimages/5.jpg" class="responsive-img" alt="MyBatis">
+                            <img src="https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/medias/featureimages/1.jpg" class="responsive-img" alt="关键字：HTML">
                             
-                            <span class="card-title">MyBatis</span>
+                            <span class="card-title">关键字：HTML</span>
                         </div>
                     </a>
-
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                简介MyBatis 本是apache的一个开源项目iBatis, 2010年这个项目由apache software foundation 迁移到了google code，并且改名为MyBatis 。2013年11月迁移到Github。
-作
+                                如果拿盖房子做比喻的话，HTML是用于搭建骨架的，使我们盖的房子有一个大概的样子；CSS是用来装修房子的，让我们的房子变得漂亮，变得五颜六色；JS是用来将我们房子拥有许多功能（实现一些动态效果），他能够提供了许多的动作，比如我们能够做饭、洗
                             
                         </div>
                         <div class="publish-info">
@@ -809,8 +437,8 @@ python的程序结构  顺序结构 循环结构 字符串的操作：print 切�
                                 
                                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                                 
-                                <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
-                                    后端
+                                <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
                                 </a>
                                 
                                 
@@ -822,28 +450,21 @@ python的程序结构  顺序结构 循环结构 字符串的操作：print 切�
                 </div>
             </div>
             
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/05/31/mei-ju/">
-                        <div class="card-image">
+                    <a href="/2021/05/31/qian-duan-san-jian-ke-css/">
+                        <div class="card-image tag-image">
                             
                             
-                            <img src="https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/medias/featureimages/7.jpg" class="responsive-img" alt="关键字：enum">
+                            <img src="https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/medias/featureimages/3.jpg" class="responsive-img" alt="关键字：CSS">
                             
-                            <span class="card-title">关键字：enum</span>
+                            <span class="card-title">关键字：CSS</span>
                         </div>
                     </a>
-
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                枚举类的属性：1.枚举类不应允许被改动，用private final修饰
-2.使用的时候应该在构造器里赋值
-3.定义带参的构造器，则在列出枚举值时也必须对应的传入参数。
-代码：
- 
-class Season{
-    //1.声明Seaso
+                                如果拿盖房子做比喻的话，HTML是用于搭建骨架的，使我们盖的房子有一个大概的样子；CSS是用来装修房子的，让我们的房子变得漂亮，变得五颜六色；JS是用来将我们房子拥有许多功能（实现一些动态效果），他能够提供了许多的动作，比如我们能够做饭、洗
                             
                         </div>
                         <div class="publish-info">
@@ -852,81 +473,10 @@ class Season{
                             </span>
                             <span class="publish-author">
                                 
-                                <i class="fas fa-user fa-fw"></i>
-                                Kong
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/04/28/mac-duan/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="mac端">
-                            
-                            <span class="card-title">mac端</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                学习配置mac版本的hexo
-
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-28
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Kong
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/01/08/kmp/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/medias/featureimages/4.jpg" class="responsive-img" alt="KMP算法">
-                            
-                            <span class="card-title">KMP算法</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                KMP简介KMP算法是我们数据结构串中最难也是最重要的算法。难是因为KMP算法的代码很优美简洁干练，但里面包含着非常深的思维。真正理解代码的人可以说对KMP算法的了解已经相当深入了。而且这个算法的不少东西的确不容易讲懂，很多正规的书本把概念
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-08
-                            </span>
-                            <span class="publish-author">
-                                
                                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                                 
-                                <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
-                                    数据结构
+                                <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
                                 </a>
                                 
                                 
@@ -934,77 +484,12 @@ class Season{
                         </div>
                     </div>
 
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/">
-                            <span class="chip bg-color">数据结构复习</span>
-                        </a>
-                        
-                        <a href="/tags/%E4%B8%B2/">
-                            <span class="chip bg-color">串</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/01/08/docker-1/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="https://cdn.jsdelivr.net/gh/konghaowen/konghaowen.github.io/medias/featureimages/2.jpg" class="responsive-img" alt="Docker_1">
-                            
-                            <span class="card-title">Docker_1</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                Docker是什么？麻烦的环境部署在软件开发中，最麻烦的事情之一就是环境配置。在正常情况下，如果要保证程序能运行，我们需要设置好操作系统，以及各种库和组件的安装。
-举例来说，要运行一个Python程序，计算机必须要有 Python 引擎，还
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-08
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Docker/" class="post-category">
-                                    Docker
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E9%85%8D%E7%BD%AE/">
-                            <span class="chip bg-color">配置</span>
-                        </a>
-                        
-                        <a href="/tags/docker%E5%AD%A6%E4%B9%A0/">
-                            <span class="chip bg-color">docker学习</span>
-                        </a>
-                        
-                    </div>
                     
                 </div>
             </div>
             
         </div>
     </article>
-
 </main>
 
 

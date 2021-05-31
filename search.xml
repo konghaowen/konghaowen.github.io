@@ -4,12 +4,18 @@
   
     
     <entry>
-      <title></title>
-      <link href="2021/05/20/pychon-zhi-shi-zong-jie/"/>
-      <url>2021/05/20/pychon-zhi-shi-zong-jie/</url>
+      <title>Java 集合</title>
+      <link href="2021/05/31/java-ji-he/"/>
+      <url>2021/05/31/java-ji-he/</url>
       
-        <content type="html"><![CDATA[<h1 id="PYCHON知识总结"><a href="#PYCHON知识总结" class="headerlink" title="PYCHON知识总结"></a>PYCHON知识总结</h1><p>1.概述：    python的特点 </p><p>2.python关键字</p><p>3.python数据类型  整型 浮点型 字符型。</p><ol start="4"><li>python运算符 算法 关系 逻辑 优先级</li><li>python的程序结构  顺序结构 循环结构 字符串的操作：print 切片 </li><li>列表 字典  集合 元类型 及操作</li><li>函数 def ……    递归调用 </li><li>文件的操作  打开（相对路径 绝对路径）。</li><li>第三方库   pip install 库名称</li><li>异常 try——了解即可</li><li>面向对象编程   声明一个类（成员函数 成员变量）</li><li>成员的可变性如何实现   公有 私有 – 保护 - 系统的 __ xxx__ </li><li>类的构造方法  __ init __():</li><li>类的继承   class（A）.   </li></ol><p>1个作业  2个   3个是类</p>]]></content>
+        <content type="html"><![CDATA[<p>JSON：一种轻量的数据交换格式。</p><h2 id="集合分为-Collection-和-Map-两种体系"><a href="#集合分为-Collection-和-Map-两种体系" class="headerlink" title="集合分为 Collection 和 Map 两种体系"></a>集合分为 Collection 和 Map 两种体系</h2><h2 id="1-collection接口："><a href="#1-collection接口：" class="headerlink" title="1.collection接口："></a>1.collection接口：</h2><p>单列数据，定义存取一组对象的方法的集合</p><p>List：元素有序，可以重复的集合</p><p>Set：元素无序，不可以重复的集合</p><p>Collection接口是List，Set，Queue接口的父接口。</p><p>接口的方法：</p><ul><li>add(Object obj); 添加元素</li><li>addAll(Collection coll); 添加一个Collection类型的集合</li><li>int size(); 获取有效元素的个数</li><li>void clear(); 清空集合</li><li>boolean isEmpty();是否为空集合</li><li>boolean contains(Object obj); 通过调用元素所在类的equals()方法来判断是否是同一个对象。</li><li>boolean containsAll(Collection c); 调用元素所在类的equals()方法来比较，用两个集合元素依次比较。</li><li>boolean remove(Object obj); 通过元素的equals()方法判断是否是要删除的元素，只会删除找到的第一个元素。</li><li>boolean removeAll(Collection coll); 取当前集合的差集</li><li>boolean retainAll(Collection c); 把交集的结果存在当前集合中，不影响 c</li><li>boolean equals(Object obj); 判断集合是否相等</li><li>Object[] toArray(); 转成对象数组</li><li>hashCode(); 获取集合对象的哈希值</li><li>iterator(); 返回迭代器对象，用于集合遍历</li></ul><h2 id="2-Map接口："><a href="#2-Map接口：" class="headerlink" title="2.Map接口："></a>2.Map接口：</h2><p>双列数据，保存具有映射关系“key-value对”的集合。</p><p><strong>Iterator迭代器接口</strong></p><p><strong>使用 Iterator 接口遍历集合元素</strong></p><p>Iterator对象称为迭代器(设计模式的一种)，主要用于遍历 Collection 集合中的元素。</p><p>GOF给迭代器模式的定义为：提供一种方法访问一个容器(container)对象中各个元 素，而又不需暴露该对象的内部细节。<strong>迭代器模式，就是为容器而生。</strong>类似于“公交车上的售票员”、“火车上的乘务员”、“空姐”。</p><p>Collection接口继承了java.lang.Iterable接口，该接口有一个iterator()方法，那么所 有实现了Collection接口的集合类都有一个iterator()方法，用以返回一个实现了 Iterator接口的对象。</p><p>Iterator 仅用于遍历集合，Iterator 本身并不提供承装对象的能力。如果需要创建 Iterator 对象，则必须有一个被迭代的集合。</p><p>集合对象每次调用iterator()方法都得到一个全新的迭代器对象，默认游标都在集合的第一个元素之前。</p><p>在调用it.next()方法之前必须要调用it.hasNext()进行检测。若不调用，且 下一条记录无效，直接调用it.next()会抛出NoSuchElementException异常。</p><p><em>Iterator和ListIterator的异同点</em></p><pre class="line-numbers language-none"><code class="language-none">一．相同点都是迭代器，当需要对集合中元素进行遍历不需要干涉其遍历过程时，这两种迭代器都可以使用。二．不同点1.使用范围不同，Iterator可以应用于所有的集合，Set、List和Map和这些集合的子类型。而ListIterator只能用于List及其子类型。2.ListIterator有add方法，可以向List中添加对象，而Iterator不能。3.ListIterator和Iterator都有hasNext()和next()方法，可以实现顺序向后遍历，但是ListIterator有hasPrevious()和previous()方法，可以实现逆向（顺序向前）遍历。Iterator不可以。4.ListIterator可以定位当前索引的位置，nextIndex()和previousIndex()可以实现。Iterator没有此功能。5.都可实现删除操作，但是ListIterator可以实现对象的修改，set()方法可以实现。Iterator仅能遍历，不能修改。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
       
+      
+      <categories>
+          
+          <category> Java SE </category>
+          
+      </categories>
       
       
     </entry>
@@ -17,25 +23,18 @@
     
     
     <entry>
-      <title></title>
-      <link href="2021/05/18/map/"/>
-      <url>2021/05/18/map/</url>
+      <title>MAP</title>
+      <link href="2021/05/31/map/"/>
+      <url>2021/05/31/map/</url>
       
         <content type="html"><![CDATA[<h2 id="1-Map接口概述："><a href="#1-Map接口概述：" class="headerlink" title="1.Map接口概述："></a>1.<strong>Map接口概述</strong>：</h2><ul><li>Map与Collection并列存在，用于保存具有<strong>映射关系</strong>的数据：key-value</li><li>Map中的key和value都可以是任何引用类型的数据。</li><li>Map中的key用Set来存放，不允许重复，即同一个Map对象所对应的类，须重写hashCode()和equlas() 方法，</li><li>常用String类作为Map的 “键” (key)</li><li>key和value之间存在单向一对一的关系，即通过指定的key总能找到唯一的、确定的value</li><li>Map接口的常用实现类：HashMap、TreeMap、LinkedHashMap和Properties。其中，<strong>HashMap</strong>是Map接口使用频率最高的实现类</li></ul><h2 id="2-Map实现类结构"><a href="#2-Map实现类结构" class="headerlink" title="2.Map实现类结构"></a>2.Map实现类结构</h2><ul><li><p>Map</p><p>：存储双列数据，存储key-value对的数据，类似函数的概念</p><ul><li><p>HashMap</p><p>：作为Map的主要实现类：线程不安全，效率高，可以存储null的key和value</p><ul><li><strong>LinkedHashMap</strong>：能保证在遍历map元素时，可以按照添加的顺序进行遍历。实现方法是在原有的HashMap底层结构的基础上添加了一对指针，指向前一个和后一个元素。对于频繁遍历的操作，此类执行效率高于HashMap。</li></ul></li><li><p><strong>TreeMap</strong>：（有序）保证按照添加的key-value对进行排序，实现排序遍历，此时使用key的自然排序和定制排序底层使用红黑树。</p></li><li><p>HashTable</p><p>：作为古老实现类，线程安全，效率低不能存储null的key和value</p><ul><li><strong>Properties</strong>：常用来处理配置文件，key和value都是String类型。</li></ul></li></ul></li></ul><p><img src="http://121.199.69.187/wp-content/uploads/2020/10/Snipaste_2020-10-12_14-55-34-1024x662.png" alt="img">Map接口结构</p><p><strong>Map的常用方法：</strong></p><p>1.<strong>添加、删除、修改操作：</strong> </p><ol><li>Object put(Object key,Object value)：将指定key-value添加到(或修改)当前map对象中 </li><li>void putAll(Map m):将m中的所有key-value对存放到当前map中</li><li>Object remove(Object key)：移除指定key的key-value对，并返回value </li><li>void clear()：清空当前map中的所有数据 </li></ol><p>2.<strong>元素查询的操作：</strong> </p><ol><li>Object get(Object key)：获取指定key对应的value </li><li>boolean containsKey(Object key)：是否包含指定的key</li><li>boolean containsValue(Object value)：是否包含指定的value </li><li>int size()：返回map中key-value对的个数 </li><li>boolean isEmpty()：判断当前map是否为空 </li><li>boolean equals(Object obj)：判断当前map和参数对象obj是否相等</li></ol><p>3.<strong>元视图操作的方法：</strong></p><ol><li>Set keySet()：返回所有key构成的Set集合</li><li>Collection values()：返回所有value构成的Collection集合</li><li>Set entrySet()：返回所有key-value对构成的Set集合</li></ol><h2 id="3-Map实现类之一：HashMap"><a href="#3-Map实现类之一：HashMap" class="headerlink" title="3.Map实现类之一：HashMap"></a>3.Map实现类之一：HashMap</h2><ol><li>HashMap是 Map接口<strong>使用频率最高</strong>的实现类。</li><li>允许使用null键和null值，与HashSet一样，不保证映射的顺序。</li><li>所有的<strong>key</strong>构成的集合是<strong>Set</strong>:无序的、不可重复的。所以，key所在的类要重写： equals()和hashCode()</li><li>所有的<strong>value</strong>构成的集合是<strong>Collection</strong>:无序的、可以重复的。所以,value所在的类要重写equals()</li><li>一个key-value构成一个entry</li><li>所有的entry构成的集合是Set:无序的、不可重复的</li><li>HashMap 判断两个 key 相等的标准是：两个 key 通过 equals() 方法返回 true，且hashCode 值也相等。</li><li>HashMap判断两个 key 相等的标准是：两个 value 通过 equals() 方法返回 true。</li></ol><p><img src="http://121.199.69.187/wp-content/uploads/2020/10/Snipaste_2020-10-15_19-28-31-1024x647.png" alt="img"></p><h3 id="3-1-HashMap的存储结构与底层实现原理（重点）"><a href="#3-1-HashMap的存储结构与底层实现原理（重点）" class="headerlink" title="3.1 HashMap的存储结构与底层实现原理（重点）"></a>3.1 HashMap的存储结构与底层实现原理（重点）</h3><p>JDK 7 及以前版本：HashMap是数组+链表结构(即为链地址法) </p><p><img src="http://121.199.69.187/wp-content/uploads/2020/10/Snipaste_2020-10-15_20-16-54-1024x546.png" alt="img"></p><p>JDK 8 版本发布以后：HashMap是<strong>数组+链表+红黑树</strong>实现。</p><p><img src="http://121.199.69.187/wp-content/uploads/2020/10/Snipaste_2020-10-15_20-20-21-1024x371.png" alt="img"></p><p><strong>HashMap的底层实现原理：</strong></p><p>以JDK 7为例，我们先把添加数据的过程简要分析一下：</p><p>先新new一个HashMap：<em>HashMap map = new HashMap( );</em> </p><p>在实例化之后，底层创建了长度是16的一维数组：<em>Entry[ ] table</em></p><p>然后就该向map中添加元素(Entry)了：调用 <em>map.put(key1,value1);</em></p><p>调用key1所在类的*hashCode( )*；计算key1的哈希值，此值经过某种计算后得到在Entry数组中存放的位置</p><p>此位置上是否有元素</p><p>如果此位置上的数据为空，则此时key1-value1添加成功 —-&gt;情况 1</p><p>如果此位置上的数据不为空，意味着此位置上存在一个或多个数据（以链表形式存在），比较key1和已经存在的一个或多个数据的哈希值</p><p>key1的哈希值与已经存在的数据哈希值异同</p><p>如果key1和已有数据哈希值都不相同，则此时key1-value1添加成功。—-&gt;情况2</p><p>如果key1和已有数据的某一个哈希值相同（key2-value2），继续比较，调用key1所在类的*equals(key2-value2)*比较</p><p>equals(key2-value2)比较结果</p><p>如果返回false，key1-value1添加成功 —-&gt; 情况3</p><p>如果返回true，使用value1替换value2。</p><p>补充：关于情况2和情况3，此时key1-value1和原来的数据以链表形式存储；在不断添加的过程中，会涉及到扩容问题，当超出临界值（且要存放的位置非空），默认的扩容方式为原来的容量的两倍，并将原有的数据复制过来。</p><p>jdk8相较于jdk7在底层实现方面的不同：</p><ul><li>new HashMap();底层没有创建一个长度为16的数组 </li><li>jdk8底层的数组是Node类型的数组，而非entry数组 </li><li><strong>首次调用put()时，底层创建长度为16的数组</strong> </li><li>jdk7底层结构只有数组+链表；jdk8中底层结构：<strong>数组+链表+红黑树</strong> </li><li>jdk8使用红黑树的情况：<strong>当数组的某一个索引位置上的元素以链表形式存在的数据个数 &gt; 8 且当前数组的长度 &gt; 64时</strong>，此时此索引位置上的所有数据改为使用红黑树存储</li></ul><p><em>如果向更深入了解HashMap的底层知识，请深吸一口气，点开下面的折叠条。</em></p><p>HashMap分析</p><p><strong>HR：谈谈你对HashMap中put/get方法的认识？如果了解再谈谈 HashMap的扩容机制？默认大小是多少？什么是负载因子( 或填充比)？什么是吞吐临界值(或阈值、threshold)？</strong></p><p><strong>HR：负载因子值的大小，对HashMap有什么影响</strong></p><ol><li>负载因子的大小决定了HashMap的数据密度。 </li><li>负载因子越大密度越大，发生碰撞的几率越高，数组中的链表越容易长, 造成查询或插入时的比较次数增多，性能会下降。 </li><li>负载因子越小，就越容易触发扩容，数据密度也越小，意味着发生碰撞的 几率越小，数组中的链表也就越短，查询和插入时比较的次数也越小，性能会更高。但是会浪费一定的内容空间。而且经常扩容也会影响性能，建 议初始化预设大一点的空间。 </li><li>按照其他语言的参考及研究经验，会考虑将负载因子设置为0.7~0.75，此 时平均检索长度接近于常数。</li></ol><h2 id="4-Map的实现类之二：LinkedHashMap"><a href="#4-Map的实现类之二：LinkedHashMap" class="headerlink" title="4.Map的实现类之二：LinkedHashMap"></a>4.Map的实现类之二：LinkedHashMap</h2><ol><li>LinkedHashMap是HashMap的子类</li><li>再HashMap的存储结构基础上，使用了一对双向链表来记录添加元素的顺序</li><li>与LinkedHashSet类似，LinkedHashMap 可以维护 Map 的迭代顺序：迭代顺序与 Key-Value 对的插入顺序一致</li></ol><p><strong>LinkedHashMap的Entry：</strong></p><pre class="line-numbers language-none"><code class="language-none">static class Entry&lt;K,V&gt; extends HashMap.Node&lt;K,V&gt; {    Entry&lt;K,V&gt; before, after;//能够记录添加的元素的先后顺序    Entry(int hash, K key, V value, Node&lt;K,V&gt; next) {        super(hash, key, value, next);    }}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><strong>HashMap的Node：</strong></p><pre class="line-numbers language-none"><code class="language-none">static class Node&lt;K,V&gt; implements Map.Entry&lt;K,V&gt; {   final int hash;   final K key;   V value;   Node&lt;K,V&gt; next; }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="5-Map的实现类之三：TreeMap"><a href="#5-Map的实现类之三：TreeMap" class="headerlink" title="5.Map的实现类之三：TreeMap"></a>5.Map的实现类之三：TreeMap</h2><ol><li><p>TreeMap存储 Key-Value 对时，需要根据 key-value 对进行排序。 TreeMap 可以保证所有的 Key-Value 对处于<strong>有序</strong>状态。 </p></li><li><p>TreeSet底层使用<strong>红黑树</strong>结构存储数据 </p></li><li><p>TreeMap 的 Key 的排序：</p></li></ol><ul><li><strong>自然排序</strong>：TreeMap 的所有的 Key 必须实现 Comparable 接口，而且所有的 Key 应该是同一个类的对象，否则将会抛出 ClasssCastException </li><li><strong>定制排序</strong>：创建 TreeMap 时，传入一个 Comparator 对象，该对象负责对 TreeMap 中的所有 key 进行排序。此时不需要 Map 的 Key 实现 Comparable 接口 </li></ul><ol start="4"><li>TreeMap判断<strong>两个key相等的标准</strong>：两个key通过compareTo()方法或 者compare()方法返回0。</li></ol><ul><li><strong>TreeMap的自然排序：</strong></li></ul><pre class="line-numbers language-none"><code class="language-none">public void test()  {    TreeMap map=new TreeMap();    Person p1=new Person("tom",10);    Person p2=new Person("jack",15);    Person p3=new Person("jerry",14);    Person p4=new Person("hell",16);    Person p5=new Person("duck",19);    map.put(p1,95);    map.put(p2,98);    map.put(p3,99);    map.put(p4,100);    map.put(p5,92);     Set entrySet=map.entrySet();    Iterator iterator1 = entrySet.iterator();    while (iterator1.hasNext()){        Object obj =iterator1.next();        //entrySet集合中元素都是entry        Map.Entry entry =(Map.Entry) obj;        System.out.println(entry.getKey()+"----&gt;"+entry.getValue());    } }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><ul><li><strong>TreeMap的定制排序：</strong></li></ul><pre class="line-numbers language-none"><code class="language-none">public void test1(){        TreeMap map=new TreeMap(new Comparator() {            @Override            public int compare(Object o1, Object o2) {                if (o1 instanceof Person &amp;&amp; o2 instanceof Person){                    Person p1=(Person) o1;                    Person p2=(Person) o2;                    return Integer.compare(p1.getAge(),p2.getAge());                 }                throw new RuntimeException("输入的类型有误");            }        });        Person p1=new Person("tom",10);        Person p2=new Person("jack",15);        Person p3=new Person("jerry",14);        Person p4=new Person("hell",16);        Person p5=new Person("duck",19);        map.put(p1,95);        map.put(p2,98);        map.put(p3,99);        map.put(p4,100);        map.put(p5,92);         Set entrySet=map.entrySet();        Iterator iterator1 = entrySet.iterator();        while (iterator1.hasNext()){            Object obj =iterator1.next();            //entrySet集合中元素都是entry            Map.Entry entry =(Map.Entry) obj;            System.out.println(entry.getKey()+"----&gt;"+entry.getValue());        }}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="6-Map实现类之四：Hashtable"><a href="#6-Map实现类之四：Hashtable" class="headerlink" title="6.Map实现类之四：Hashtable"></a><strong>6.Map实现类之四：Hashtable</strong></h2><ol><li>Hashtable是个古老的 Map 实现类，JDK1.0就提供了。</li><li>不同于HashMap， Hashtable是<strong>线程安全</strong>的。 </li><li>Hashtable实现原理和HashMap相同，功能相同。底层都使用<strong>哈希表</strong>结构，<strong>查询速度快</strong>，很多情况下可以互用。 </li><li>与HashMap不同，Hashtable <strong>不允许使用 null 作为 key 和 value</strong></li><li>与HashMap一样，Hashtable 也<strong>不能保证其中 Key-Value 对的顺序</strong></li><li>Hashtable判断两个key相等、两个value相等的标准，与HashMap一致。</li></ol><h2 id="7-Map实现类之五：Properties"><a href="#7-Map实现类之五：Properties" class="headerlink" title="7.Map实现类之五：Properties"></a>7.<strong>Map实现类之五：Properties</strong></h2><ul><li>Properties 类是 Hashtable 的子类，该对象用于处理属性文件 </li><li>由于属性文件里的 key、value 都是字符串类型，所以 Properties 里的 key 和 value 都是字符串类型</li><li>存取数据时，建议使用setProperty(String key,String value)方法和 getProperty(String key)方法</li></ul><pre class="line-numbers language-none"><code class="language-none">Properties pros = new Properties();  pros.load(new FileInputStream("jdbc.properties"));  String user = pros.getProperty("user");  System.out.println(user);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p><strong>关于Properties的练习</strong></p><p>第一步，在IDEA中创建一个名为xxx.properties的文档，这里以jdbc.properties为例</p><p><img src="/.io//svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+" alt="img">properties文件</p><p>然后在文档里写入数据，以key-value的形式</p><p><img src="/.io//svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+" alt="img"></p><p>其中，name为key；age为value。</p><p>然后创建一个测试类</p><pre class="line-numbers language-none"><code class="language-none">package JavaSenior.CollectionTest.Map; import java.io.FileInputStream;import java.io.FileNotFoundException;import java.io.IOException;import java.net.PasswordAuthentication;import java.sql.JDBCType;import java.util.Properties; /** * @author du guodong * @create 2020-10-08-9:22 */public class PropertiesTest {    public static void main(String[] args)  {        FileInputStream fis = null;        try {            Properties pros = new Properties();            fis = new FileInputStream("jdbc.properties");            pros.load(fis);//加载流对应的文件            String name = pros.getProperty("name");            String age = pros.getProperty("age");             System.out.println(name+ "==&gt;"+age);        } catch (IOException e) {            e.printStackTrace();        }finally {            if (fis!=null){                try {                    fis.close();                } catch (IOException e) {                    e.printStackTrace();                }            }     } }}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>运行测试即可，详细的讲解以后补充。</p>]]></content>
       
       
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="2021/05/12/mybatis/"/>
-      <url>2021/05/12/mybatis/</url>
-      
-        <content type="html"><![CDATA[<p>简介<br>MyBatis 本是apache的一个开源项目iBatis, 2010年这个项目由apache software foundation 迁移到了google code，并且改名为MyBatis 。2013年11月迁移到Github。</p><p>作用<br>MyBatis能帮助我们快速开发基于Java + 数据库的程序，能帮助我们快速映射POJO对象和数据库中的数据 同时支持普通 SQL查询，存储过程和高级映射的优秀持久层框架。</p>]]></content>
-      
+      <categories>
+          
+          <category> Java SE </category>
+          
+      </categories>
       
       
     </entry>
@@ -43,51 +42,94 @@
     
     
     <entry>
-      <title></title>
-      <link href="2021/05/12/qian-duan-san-jian-ke-css/"/>
-      <url>2021/05/12/qian-duan-san-jian-ke-css/</url>
+      <title>PYCHON知识总结</title>
+      <link href="2021/05/31/pychon-zhi-shi-zong-jie/"/>
+      <url>2021/05/31/pychon-zhi-shi-zong-jie/</url>
+      
+        <content type="html"><![CDATA[<p>1.概述：    python的特点 </p><p>2.python关键字</p><p>3.python数据类型  整型 浮点型 字符型。</p><ol start="4"><li>python运算符 算法 关系 逻辑 优先级</li><li>python的程序结构  顺序结构 循环结构 字符串的操作：print 切片 </li><li>列表 字典  集合 元类型 及操作</li><li>函数 def ……    递归调用 </li><li>文件的操作  打开（相对路径 绝对路径）。</li><li>第三方库   pip install 库名称</li><li>异常 try——了解即可</li><li>面向对象编程   声明一个类（成员函数 成员变量）</li><li>成员的可变性如何实现   公有 私有 – 保护 - 系统的 __ xxx__ </li><li>类的构造方法  __ init __():</li><li>类的继承   class（A）.   </li></ol><p>1个作业  2个   3个是类</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 校内复习资料 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>TCP/IP</title>
+      <link href="2021/05/31/tcpip/"/>
+      <url>2021/05/31/tcpip/</url>
+      
+        <content type="html"><![CDATA[<h2 id="具体含义："><a href="#具体含义：" class="headerlink" title="具体含义："></a>具体含义：</h2><p>1.指代2种协议. TCP和IP协议 2.IP进行通信时所必须用到的协议群的统称。</p><h2 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h2><p>开放性  注重实用性（被标准化的协议能否被实际运用）</p><h2 id="分层模型"><a href="#分层模型" class="headerlink" title="分层模型"></a>分层模型</h2><h3 id="物理层（硬件层）"><a href="#物理层（硬件层）" class="headerlink" title="物理层（硬件层）"></a>物理层（硬件层）</h3><p>负责数据传输的硬件</p><h3 id="数据链路层（网络接口层）"><a href="#数据链路层（网络接口层）" class="headerlink" title="数据链路层（网络接口层）"></a>数据链路层（网络接口层）</h3><p>利用以太网中的数据链路层进行通信。 属于接口层。</p><h3 id="网络层（互联网层）"><a href="#网络层（互联网层）" class="headerlink" title="网络层（互联网层）"></a>网络层（互联网层）</h3><p>互联网层使用IP协议，它相当于OSI模型中的第三层网络层。</p><h3 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h3><p>主要功能让应用程序之间实现通信。</p><h3 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h3><p>TCP/IP应用的架构绝大多数属于server/client 模型</p><p><img src="/.io//svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+" alt="img"></p><h2 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h2><p>第一次握手，客户端发起，客户端要给服务端发起建立连接的请求， 标志位（SYN）为1 表示连接建立，同时随机生成32位初始化序列号（seq）。</p><p>第二次握手，服务端发起，向客户端发生消息，但服务端却不知道消息是否发生成功，所以产生了第三次握手来让服务器知道。</p><p>第三次握手，客户端发起，告诉服务端，我接受到了你的消息。</p><p>流程图如下：</p><p><img src="http://47.97.206.98/wp-content/uploads/2020/09/tcp_ip%E5%8D%8F%E8%AE%AE%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E3%80%81%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B%EF%BC%8C%E9%80%9A%E4%BF%97%E6%98%93%E6%87%82%EF%BC%8C%E4%BA%B2%E8%87%AA%E8%A7%A3%E7%AD%94_%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9-%E3%82%9C-%E3%82%9C%E3%81%A4%E3%83%AD-%E5%B9%B2%E6%9D%AF-bilibili-Google-Chrome-2020_10_1-21_28_57-e1601558998791.png" alt="img"></p><h2 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h2><p>第一次：客户端想要断开连接，发送报文标志位的FIN = 1，seq =25368，</p><p>第二次，服务端发送ACK=1 ack=25368+1 确认消息包，知道客户端想和我断开连接，不在给服务端发数据了。 服务端告诉客户端我知道你想与我断开，但是我还没有准备好</p><p>第三次，服务端发送 FIN =1 seq = 10568，服务端告诉客户端我要跟你断开</p><p>第四次：客户端发送确认包，然后与服务端断开连接。</p><p><img src="http://47.97.206.98/wp-content/uploads/2020/09/tcp_ip%E5%8D%8F%E8%AE%AE%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E3%80%81%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B%EF%BC%8C%E9%80%9A%E4%BF%97%E6%98%93%E6%87%82%EF%BC%8C%E4%BA%B2%E8%87%AA%E8%A7%A3%E7%AD%94_%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9-%E3%82%9C-%E3%82%9C%E3%81%A4%E3%83%AD-%E5%B9%B2%E6%9D%AF-bilibili-Google-Chrome-2020_10_1-21_35_11-e1601559342897.png" alt="img"></p><p>三次握手的目的是为了建立一个保证安全的连接，也是ack位置1的消息，不管client还是server 都可以彼此知道我可以给对方发消息和接受消息 。</p><p>四次握手：下次补充。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机网络 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>关键字：CSS</title>
+      <link href="2021/05/31/qian-duan-san-jian-ke-css/"/>
+      <url>2021/05/31/qian-duan-san-jian-ke-css/</url>
       
         <content type="html"><![CDATA[<p>如果拿盖房子做比喻的话，HTML是用于搭建骨架的，使我们盖的房子有一个大概的样子；CSS是用来装修房子的，让我们的房子变得漂亮，变得五颜六色；JS是用来将我们房子拥有许多功能（实现一些动态效果），他能够提供了许多的动作，比如我们能够做饭、洗澡、洗衣服等等。————–CSDN</p><ol><li>概念： Cascading Style Sheets 层叠样式表</li></ol><ul><li>层叠：多个样式可以作用在同一个html的元素上，同时生效<br>​ 用于控制网页样式</li></ul><ol><li>好处：</li><li>功能强大</li><li>将内容展示和样式控制分离</li></ol><ul><li>降低耦合度,解耦</li><li>让分工协作更容易</li><li>提高开发效率</li></ul><p>1，内嵌式<br>内嵌式是将CSS代码集中写在HTML文档的头部标签中，并用style标记定义<br>基本语法如下：</p><pre class="line-numbers language-none"><code class="language-none">&lt;style type = "text/css"&gt;                                              选择器{属性1：属性值2；属性2：属性值2；属性3：属性值3}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>2，链入式<br>链入式是将所有的样式放在一个或多个以CSS为拓展名的外部样式表文件中，通过标记将外部样式表文件链接到html文件中</p><p>基本语法如下</p><p>3，CSS选择器和常用属性<br>（1），标记选择器<br>基本语法如下：</p><p>标记名{属性1：属性值1；属性2：属性值2；属性值3：属性值3；}<br>（2），类选择器<br>基本语法如下：</p><p>.类名{属性1：属性值1；属性2：属性值2；属性值3：属性值3；}<br>（3），id选择器<br>基本语法如下：</p><p>#id{属性1：属性值1；属性2：属性值2；属性值3：属性值3；}<br>（4），通配符选择器<br>基本语法如下：</p>]]></content>
       
       
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
       
     </entry>
     
     
     
     <entry>
-      <title></title>
-      <link href="2021/05/12/qian-duan-san-jian-ke-html/"/>
-      <url>2021/05/12/qian-duan-san-jian-ke-html/</url>
+      <title>关键字：HTML</title>
+      <link href="2021/05/31/qian-duan-san-jian-ke-html/"/>
+      <url>2021/05/31/qian-duan-san-jian-ke-html/</url>
       
         <content type="html"><![CDATA[<p>如果拿盖房子做比喻的话，HTML是用于搭建骨架的，使我们盖的房子有一个大概的样子；CSS是用来装修房子的，让我们的房子变得漂亮，变得五颜六色；JS是用来将我们房子拥有许多功能（实现一些动态效果），他能够提供了许多的动作，比如我们能够做饭、洗澡、洗衣服等等。————–CSDN<br>1.HTML<br>HTML，中文译为超文本标记语言，是构成网页文档的主要语言，主要用来实现静态页面。一般情况下，用户看到的文字，图形，动画，声音，表格，链接等元素都是由HTML语言描述的。“超”，即超越文本，指可设置样 式、可展示图片，而最核心的是“超级链接”,可以链接到其他文档。由于HTML是由标签组成的，所以使用HTML就是在基本结构上加标签。<br>———</p><p>在这里插入图片描述</p><p>*</p><ul><li>form：用于定义表单的。可以定义一个范围，范围代表采集用户数据的范围</li><li>属性：</li><li>action：指定提交数据的URL</li><li>method:指定提交方式</li><li>分类：一共7种，2种比较常用</li><li>get：</li></ul><ol><li>请求参数会在地址栏中显示。会封装到请求行中(HTTP协议后讲解)。</li><li>请求参数大小是有限制的。</li><li>不太安全。</li></ol><ul><li>post：</li></ul><ol><li>请求参数不会再地址栏中显示。会封装在请求体中(HTTP协议后讲解)</li><li>请求参数的大小没有限制。</li><li>较为安全。<br>​</li></ol><ul><li>表单项中的数据要想被提交：必须指定其name属性</li><li>表单项标签：</li><li>input：可以通过type属性值，改变元素展示的样式</li><li>type属性：</li><li>text：文本输入框，默认值</li><li>placeholder：指定输入框的提示信息，当输入框的内容发生变化，会自动清空提示信息</li><li>password：密码输入框</li><li>radio:单选框</li><li>注意：</li></ul><ol><li>要想让多个单选框实现单选的效果，则多个单选框的name属性值必须一样。</li><li>一般会给每一个单选框提供value属性，指定其被选中后提交的值</li><li>checked属性，可以指定默认值</li></ol><ul><li>checkbox：复选框</li><li>注意：</li></ul><ol><li>一般会给每一个单选框提供value属性，指定其被选中后提交的值</li><li>checked属性，可以指定默认值<br>​</li></ol><ul><li>file：文件选择框</li><li>hidden：隐藏域，用于提交一些信息。</li><li>按钮：</li><li>submit：提交按钮。可以提交表单</li><li>button：普通按钮</li><li>image：图片提交按钮</li><li>src属性指定图片的路径<br>​</li><li>label：指定输入项的文字描述信息</li><li>注意：</li><li>label的for属性一般会和 input 的 id属性值 对应。如果对应了，则点击label区域，会让input输入框获取焦点。</li><li>select: 下拉列表</li><li>子元素：option，指定列表项</li><li>textarea：文本域</li><li>cols：指定列数，每一行有多少个字符</li><li>rows：默认多少行。</li></ul><p>超级文本标记语言文档制作不是很复杂，但功能强大，支持不同数据格式的文件镶入，这也是万维网（WWW）盛行的原因之一，其主要特点如下：</p><p>简易性：超级文本标记语言版本升级采用超集方式，从而更加灵活方便。<br>可扩展性：超级文本标记语言的广泛应用带来了加强功能，增加标识符等要求，超级文本标记语言采取子类元素的方式，为系统扩展带来保证。<br>平台无关性：虽然个人计算机大行其道，但使用MAC等其他机器的大有人在，超级文本标记语言可以使用在广泛的平台上，这也是万维网（WWW）盛行的另一个原因。<br>通用性：另外，HTML是网络的通用语言，一种简单、通用的全置标记语言。它允许网页制作人建立文本与图片相结合的复杂页面，这些页面可以被网上任何其他人浏览到，无论使用的是什么类型的电脑或浏览器。</p>]]></content>
       
       
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
       
     </entry>
     
     
     
     <entry>
-      <title></title>
-      <link href="2021/05/12/qian-duan-san-jian-ke-javascript/"/>
-      <url>2021/05/12/qian-duan-san-jian-ke-javascript/</url>
+      <title>关键字：JavaScript</title>
+      <link href="2021/05/31/qian-duan-san-jian-ke-javascript/"/>
+      <url>2021/05/31/qian-duan-san-jian-ke-javascript/</url>
       
         <content type="html"><![CDATA[<p>如果拿盖房子做比喻的话，HTML是用于搭建骨架的，使我们盖的房子有一个大概的样子；CSS是用来装修房子的，让我们的房子变得漂亮，变得五颜六色；JS是用来将我们房子拥有许多功能（实现一些动态效果），他能够提供了许多的动作，比如我们能够做饭、洗澡、洗衣服等等。————–CSDN</p><p>javascript主要是为了实现在前端页面显示的一些动态效果.它也是一门非常强大的语言,不仅可以写前端页面,也可以编写后端.可以说非常的强大,语言的兼容性非常的好,不会轻易的报错.——-博客园</p><p>（一）简介（JS）<br>1).JavaScript（JS）是一种网页脚本语言。<br>通过在HTML网页中直接嵌入JS脚本，可以实现响应浏览器事件，读写HTML元素内容，更改HTML元素样式等功能。JS代码可以很容易的嵌入html页面中。也可以单独将JS代码写在一个文件中。浏览器对JS脚本程序进行解释执行。</p><p>基本写法：</p><p>javascript代码块<br>或者<br>短代码</p><p>2).一个完整的 JavaScript 实现是由以下 3 个不同部分组成<br>1.核心（ECMAScript）<br>2.文档对象模型（DOM） Document object model (整合js，css，html)<br>3.浏览器对象模型（BOM） Broswer object model（整合js和浏览器）<br>Javascript 在开发中绝大多数情况是基于对象的.也是面向对象的.<br>（二）JavaScript内置对象<br>（1）window:负责操作浏览器窗口，负责窗口的状态，开/闭等。<br>（2）document：负责操作浏览器载入的文档（html文件），从属于window。<br>（3）history：可以代替后退（前进）按钮访问历史记录，从属于window。<br>（4）location：访问地址栏，也从属于window。</p>]]></content>
       
       
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="2021/05/12/tcpip/"/>
-      <url>2021/05/12/tcpip/</url>
-      
-        <content type="html"><![CDATA[<h1 id="TCP-IP"><a href="#TCP-IP" class="headerlink" title="TCP/IP"></a>TCP/IP</h1><h2 id="具体含义："><a href="#具体含义：" class="headerlink" title="具体含义："></a>具体含义：</h2><p>1.指代2种协议. TCP和IP协议 2.IP进行通信时所必须用到的协议群的统称。</p><h2 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h2><p>开放性  注重实用性（被标准化的协议能否被实际运用）</p><h2 id="分层模型"><a href="#分层模型" class="headerlink" title="分层模型"></a>分层模型</h2><h3 id="物理层（硬件层）"><a href="#物理层（硬件层）" class="headerlink" title="物理层（硬件层）"></a>物理层（硬件层）</h3><p>负责数据传输的硬件</p><h3 id="数据链路层（网络接口层）"><a href="#数据链路层（网络接口层）" class="headerlink" title="数据链路层（网络接口层）"></a>数据链路层（网络接口层）</h3><p>利用以太网中的数据链路层进行通信。 属于接口层。</p><h3 id="网络层（互联网层）"><a href="#网络层（互联网层）" class="headerlink" title="网络层（互联网层）"></a>网络层（互联网层）</h3><p>互联网层使用IP协议，它相当于OSI模型中的第三层网络层。</p><h3 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h3><p>主要功能让应用程序之间实现通信。</p><h3 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h3><p>TCP/IP应用的架构绝大多数属于server/client 模型</p><p><img src="/.io//svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+" alt="img"></p><h2 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h2><p>第一次握手，客户端发起，客户端要给服务端发起建立连接的请求， 标志位（SYN）为1 表示连接建立，同时随机生成32位初始化序列号（seq）。</p><p>第二次握手，服务端发起，向客户端发生消息，但服务端却不知道消息是否发生成功，所以产生了第三次握手来让服务器知道。</p><p>第三次握手，客户端发起，告诉服务端，我接受到了你的消息。</p><p>流程图如下：</p><p><img src="http://47.97.206.98/wp-content/uploads/2020/09/tcp_ip%E5%8D%8F%E8%AE%AE%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E3%80%81%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B%EF%BC%8C%E9%80%9A%E4%BF%97%E6%98%93%E6%87%82%EF%BC%8C%E4%BA%B2%E8%87%AA%E8%A7%A3%E7%AD%94_%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9-%E3%82%9C-%E3%82%9C%E3%81%A4%E3%83%AD-%E5%B9%B2%E6%9D%AF-bilibili-Google-Chrome-2020_10_1-21_28_57-e1601558998791.png" alt="img"></p><h2 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h2><p>第一次：客户端想要断开连接，发送报文标志位的FIN = 1，seq =25368，</p><p>第二次，服务端发送ACK=1 ack=25368+1 确认消息包，知道客户端想和我断开连接，不在给服务端发数据了。 服务端告诉客户端我知道你想与我断开，但是我还没有准备好</p><p>第三次，服务端发送 FIN =1 seq = 10568，服务端告诉客户端我要跟你断开</p><p>第四次：客户端发送确认包，然后与服务端断开连接。</p><p><img src="http://47.97.206.98/wp-content/uploads/2020/09/tcp_ip%E5%8D%8F%E8%AE%AE%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E3%80%81%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B%EF%BC%8C%E9%80%9A%E4%BF%97%E6%98%93%E6%87%82%EF%BC%8C%E4%BA%B2%E8%87%AA%E8%A7%A3%E7%AD%94_%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9-%E3%82%9C-%E3%82%9C%E3%81%A4%E3%83%AD-%E5%B9%B2%E6%9D%AF-bilibili-Google-Chrome-2020_10_1-21_35_11-e1601559342897.png" alt="img"></p><p>三次握手的目的是为了建立一个保证安全的连接，也是ack位置1的消息，不管client还是server 都可以彼此知道我可以给对方发消息和接受消息 。</p><p>四次握手：下次补充。</p>]]></content>
-      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
       
       
     </entry>
@@ -95,12 +137,18 @@
     
     
     <entry>
-      <title></title>
-      <link href="2021/05/12/mei-ju/"/>
-      <url>2021/05/12/mei-ju/</url>
+      <title>MyBatis</title>
+      <link href="2021/05/31/mybatis/"/>
+      <url>2021/05/31/mybatis/</url>
       
-        <content type="html"><![CDATA[<h1 id="关键字：enum"><a href="#关键字：enum" class="headerlink" title="关键字：enum"></a>关键字：enum</h1><h2 id="枚举类的属性："><a href="#枚举类的属性：" class="headerlink" title="枚举类的属性："></a>枚举类的属性：</h2><p>1.枚举类不应允许被改动，用private final修饰</p><p>2.使用的时候应该在构造器里赋值</p><p>3.定义带参的构造器，则在列出枚举值时也必须对应的传入参数。</p><p>代码：</p><pre class="line-numbers language-none"><code class="language-none"> class Season{    //1.声明Season对象的属性:private final修饰    private final String seasonName;    private final String seasonDesc;     //2.私有化类的构造器,并给对象属性赋值    private Season(String seasonName,String seasonDesc){        this.seasonName = seasonName;        this.seasonDesc = seasonDesc;    }     //3.提供当前枚举类的多个对象：public static final的    public static final Season SPRING = new Season("春天","春暖花开");    public static final Season SUMMER = new Season("夏天","夏日炎炎");    public static final Season AUTUMN = new Season("秋天","秋高气爽");    public static final Season WINTER = new Season("冬天","冰天雪地");}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="Enum类的方法："><a href="#Enum类的方法：" class="headerlink" title="Enum类的方法："></a>Enum类的方法：</h2><p>1.values()方法：返回枚举类型的对象数组。该方法可以很方便地遍历所有枚举值。</p><p>2.valueOf(String str):把字符串转成对应的枚举类对象。</p><p>3.toString()：返回当前枚举类对象常量的名称。</p><pre class="line-numbers language-none"><code class="language-none">注意：枚举类不可以被clone，如果调用clone会抛出一个CloneNotSupportedException的错误。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
+        <content type="html"><![CDATA[<p>简介<br>MyBatis 本是apache的一个开源项目iBatis, 2010年这个项目由apache software foundation 迁移到了google code，并且改名为MyBatis 。2013年11月迁移到Github。</p><p>作用<br>MyBatis能帮助我们快速开发基于Java + 数据库的程序，能帮助我们快速映射POJO对象和数据库中的数据 同时支持普通 SQL查询，存储过程和高级映射的优秀持久层框架。</p>]]></content>
       
+      
+      <categories>
+          
+          <category> 后端 </category>
+          
+      </categories>
       
       
     </entry>
@@ -108,11 +156,11 @@
     
     
     <entry>
-      <title></title>
-      <link href="2021/05/12/java-ji-he/"/>
-      <url>2021/05/12/java-ji-he/</url>
+      <title>关键字：enum</title>
+      <link href="2021/05/31/mei-ju/"/>
+      <url>2021/05/31/mei-ju/</url>
       
-        <content type="html"><![CDATA[<p>JSON：一种轻量的数据交换格式。</p><h2 id="集合分为-Collection-和-Map-两种体系"><a href="#集合分为-Collection-和-Map-两种体系" class="headerlink" title="集合分为 Collection 和 Map 两种体系"></a>集合分为 Collection 和 Map 两种体系</h2><h2 id="1-collection接口："><a href="#1-collection接口：" class="headerlink" title="1.collection接口："></a>1.collection接口：</h2><p>单列数据，定义存取一组对象的方法的集合</p><p>List：元素有序，可以重复的集合</p><p>Set：元素无序，不可以重复的集合</p><p>Collection接口是List，Set，Queue接口的父接口。</p><p>接口的方法：</p><ul><li>add(Object obj); 添加元素</li><li>addAll(Collection coll); 添加一个Collection类型的集合</li><li>int size(); 获取有效元素的个数</li><li>void clear(); 清空集合</li><li>boolean isEmpty();是否为空集合</li><li>boolean contains(Object obj); 通过调用元素所在类的equals()方法来判断是否是同一个对象。</li><li>boolean containsAll(Collection c); 调用元素所在类的equals()方法来比较，用两个集合元素依次比较。</li><li>boolean remove(Object obj); 通过元素的equals()方法判断是否是要删除的元素，只会删除找到的第一个元素。</li><li>boolean removeAll(Collection coll); 取当前集合的差集</li><li>boolean retainAll(Collection c); 把交集的结果存在当前集合中，不影响 c</li><li>boolean equals(Object obj); 判断集合是否相等</li><li>Object[] toArray(); 转成对象数组</li><li>hashCode(); 获取集合对象的哈希值</li><li>iterator(); 返回迭代器对象，用于集合遍历</li></ul><h2 id="2-Map接口："><a href="#2-Map接口：" class="headerlink" title="2.Map接口："></a>2.Map接口：</h2><p>双列数据，保存具有映射关系“key-value对”的集合。</p><p><strong>Iterator迭代器接口</strong></p><p><strong>使用 Iterator 接口遍历集合元素</strong></p><p>Iterator对象称为迭代器(设计模式的一种)，主要用于遍历 Collection 集合中的元素。</p><p>GOF给迭代器模式的定义为：提供一种方法访问一个容器(container)对象中各个元 素，而又不需暴露该对象的内部细节。<strong>迭代器模式，就是为容器而生。</strong>类似于“公交车上的售票员”、“火车上的乘务员”、“空姐”。</p><p>Collection接口继承了java.lang.Iterable接口，该接口有一个iterator()方法，那么所 有实现了Collection接口的集合类都有一个iterator()方法，用以返回一个实现了 Iterator接口的对象。</p><p>Iterator 仅用于遍历集合，Iterator 本身并不提供承装对象的能力。如果需要创建 Iterator 对象，则必须有一个被迭代的集合。</p><p>集合对象每次调用iterator()方法都得到一个全新的迭代器对象，默认游标都在集合的第一个元素之前。</p><p>在调用it.next()方法之前必须要调用it.hasNext()进行检测。若不调用，且 下一条记录无效，直接调用it.next()会抛出NoSuchElementException异常。</p><p><em>Iterator和ListIterator的异同点</em></p><pre class="line-numbers language-none"><code class="language-none">一．相同点都是迭代器，当需要对集合中元素进行遍历不需要干涉其遍历过程时，这两种迭代器都可以使用。二．不同点1.使用范围不同，Iterator可以应用于所有的集合，Set、List和Map和这些集合的子类型。而ListIterator只能用于List及其子类型。2.ListIterator有add方法，可以向List中添加对象，而Iterator不能。3.ListIterator和Iterator都有hasNext()和next()方法，可以实现顺序向后遍历，但是ListIterator有hasPrevious()和previous()方法，可以实现逆向（顺序向前）遍历。Iterator不可以。4.ListIterator可以定位当前索引的位置，nextIndex()和previousIndex()可以实现。Iterator没有此功能。5.都可实现删除操作，但是ListIterator可以实现对象的修改，set()方法可以实现。Iterator仅能遍历，不能修改。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+        <content type="html"><![CDATA[<h2 id="枚举类的属性："><a href="#枚举类的属性：" class="headerlink" title="枚举类的属性："></a>枚举类的属性：</h2><p>1.枚举类不应允许被改动，用private final修饰</p><p>2.使用的时候应该在构造器里赋值</p><p>3.定义带参的构造器，则在列出枚举值时也必须对应的传入参数。</p><p>代码：</p><pre class="line-numbers language-none"><code class="language-none"> class Season{    //1.声明Season对象的属性:private final修饰    private final String seasonName;    private final String seasonDesc;     //2.私有化类的构造器,并给对象属性赋值    private Season(String seasonName,String seasonDesc){        this.seasonName = seasonName;        this.seasonDesc = seasonDesc;    }     //3.提供当前枚举类的多个对象：public static final的    public static final Season SPRING = new Season("春天","春暖花开");    public static final Season SUMMER = new Season("夏天","夏日炎炎");    public static final Season AUTUMN = new Season("秋天","秋高气爽");    public static final Season WINTER = new Season("冬天","冰天雪地");}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="Enum类的方法："><a href="#Enum类的方法：" class="headerlink" title="Enum类的方法："></a>Enum类的方法：</h2><p>1.values()方法：返回枚举类型的对象数组。该方法可以很方便地遍历所有枚举值。</p><p>2.valueOf(String str):把字符串转成对应的枚举类对象。</p><p>3.toString()：返回当前枚举类对象常量的名称。</p><pre class="line-numbers language-none"><code class="language-none">注意：枚举类不可以被clone，如果调用clone会抛出一个CloneNotSupportedException的错误。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
       
       
       
@@ -128,33 +176,6 @@
         <content type="html"><![CDATA[<p>学习配置mac版本的hexo</p>]]></content>
       
       
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Docker_1</title>
-      <link href="2021/01/08/docker-1/"/>
-      <url>2021/01/08/docker-1/</url>
-      
-        <content type="html"><![CDATA[<h2 id="Docker是什么？"><a href="#Docker是什么？" class="headerlink" title="Docker是什么？"></a>Docker是什么？</h2><h3 id="麻烦的环境部署"><a href="#麻烦的环境部署" class="headerlink" title="麻烦的环境部署"></a>麻烦的环境部署</h3><p>在软件开发中，最麻烦的事情之一就是环境配置。在正常情况下，如果要保证程序能运行，我们需要设置好操作系统，以及各种库和组件的安装。</p><p>举例来说，要运行一个Python程序，计算机必须要有 Python 引擎，还需要安装好程序的各种依赖，甚至还要配置特定的环境变量。假设你有两个程序都需要部署在同一个服务器上，一个需要软件是基于Python2.0，一个是Python3.0，那么在部署上就很容易造成混乱。因为不同版本的Python模块可能互不兼容，况且不同开发环境上的库也需要额外的配置。如果要部署很多程序，而开发环境和部署环境各不相同的话，可想而知配置得多么麻烦。</p><p>为了更好地将软件从一个环境移植到另一个环境上，必须从根源上解决问题，那么如何在移植软件的时候，将一模一样的原始环境迁移过来呢？</p><h3 id="虚拟机（Virtual-Machine）"><a href="#虚拟机（Virtual-Machine）" class="headerlink" title="虚拟机（Virtual Machine）"></a>虚拟机（Virtual Machine）</h3><p>虚拟机是移植环境的一种解决方案。虚拟机本质上也是一个软件，在这个软件中，我们可以运行另一种操作系统。比如我们想要在 MacOS 上运行 Linux 系统，我们就在电脑上安装 Linux 镜像，并使用虚拟机打开此镜像，就能创建出一个镜中镜了。这个方案非常方便，想要新环境，就安装镜像，然后使用虚拟机打开，不想要直接删除。但是这个方案有几个缺点：</p><ol><li>占用资源多：虚拟机需要安装整个操作系统，自然会消耗大量内存和硬盘空间。如我们只需要运行1MB的软件，有时候也不得不安装几个G的环境才能运行。</li><li>运行步骤冗余：虚拟机安装的是完整的系统，每次运行程序都需要按部就班，打开系统、登入用户等等之类麻烦的步骤，很不方便。</li><li>运行速度慢：为了运行特定环境中的软件，虚拟机必须先运行系统，而系统占用的资源往往很多（网络，GUI，IO等等），自然也会影响运行速度。</li></ol><h3 id="Linux容器（Container）"><a href="#Linux容器（Container）" class="headerlink" title="Linux容器（Container）"></a>Linux容器（Container）</h3><p>为了解决虚拟机存在的这些缺点，Linux发展出了另一种虚拟化的技术：Linux容器。Linux 容器不是模拟一个完整的操作系统，而是对进程进行隔离。或者说，就是在正常进程的外面套用了一个保护层。对于容器里面的进程来说，它接触到的各种资源都是虚拟的，从而实现与底层程序的隔离。由于容器是进程级别的，相比虚拟机有更多优势：</p><ol><li>占有资源少：容器只占用需要的资源，不占用那些用不到的资源。相比于虚拟机安装完整的操作系统，容器需要消耗的空间自然就少了很多。</li><li>资源利用率高：虚拟机都是独享资源，电脑需要为每个虚拟环境单独分配资源，不仅仅占用空间大，而且资源的利用率很低。而容器之间可以共享资源，最大化资源的利用率。</li><li>运行速度快：容器里面的应用就是底层系统的一个进程，所以启动容器相当于直接运行本机的一个进程，而不是一个完整并臃肿的操作系统，自然就快很多。</li></ol><h3 id="Docker是什么？-1"><a href="#Docker是什么？-1" class="headerlink" title="Docker是什么？"></a>Docker是什么？</h3><p>Docker属于Linux容器的一种封装，提供简单易用的容器使用接口，它也是目前最流行的Linux容器解决方案。Docker 将软件代码和其依赖，全打包在一个文件中。运行单个文件，就会生成虚拟容器。在这个虚拟容器中，不管本地的操作系统是如何的不同，此容器都能照常运行。</p><p>简而言之，Docker的接口非常简单，可以帮助用户更好地创建和使用容器，让相同的代码在不同的环境上正常运行。</p><h3 id="Docker的用途"><a href="#Docker的用途" class="headerlink" title="Docker的用途"></a>Docker的用途</h3><p>Docker目前主要有以下三个用途：</p><ol><li>提供一次性的环境：本地测试别人的软件、持续集成的时候提供单元测试和构建的环境。</li><li>提供弹性的云服务：因为Docker容器可以随时启动或关闭，所以非常适合动态规划和缩容。</li><li>组建微服务构架：通过多个容器，服务的部署能更加灵活，帮助实现微服务构架。</li></ol><h2 id="运行第一个Docker容器"><a href="#运行第一个Docker容器" class="headerlink" title="运行第一个Docker容器"></a>运行第一个Docker容器</h2><h3 id="安装Docker"><a href="#安装Docker" class="headerlink" title="安装Docker"></a>安装Docker</h3><p>Docker是一个开源的商业产品，有两个版本：社群版（Community Edition）和企业本（Enterprise Edition）。企业版中包含了一些收费服务，个人开发者一般用不到。下面我们就来下载并使用社区版。</p><p>Docker CE 的安装可以参看官网网站：<a href="https://docs.docker.com/get-docker/%EF%BC%8C%E8%AF%B7%E6%A0%B9%E6%8D%AE%E8%87%AA%E5%B7%B1%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%B1%BB%E5%9E%8B%E9%80%89%E6%8B%A9%E7%9B%B8%E5%AF%B9%E5%BA%94%E7%9A%84%E7%89%88%E6%9C%AC%E3%80%82">https://docs.docker.com/get-docker/，请根据自己操作系统的类型选择相对应的版本。</a></p><p>安装完成后，运行下面的命令，验证是否安装成功。</p><pre class="line-numbers language-none"><code class="language-none">$ docker version<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>确认 Docker 安装完毕后，我们可以使用以下命令运行 Docker：</p><pre class="line-numbers language-none"><code class="language-none">$ sudo service docker start<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>使用 Mac 的朋友直接打开下载好的 Docker 软件即可。</p><h3 id="image文件"><a href="#image文件" class="headerlink" title="image文件"></a>image文件</h3><p>Docker 把应用程序及其依赖，打包在 image 文件里面。只有通过这个文件，才能生成 Docker 容器。image 文件可以看作是容器的设计蓝图。Docker 根据 image 文件生成容器的实例。同一个 image 文件，可以生成多个同时运行的容器实例。</p><p>image 是二进制文件，在实际开发中，一个 image 文件往往通过继承另一个 image 文件，加上一些个性化设置而生成。举例来说，你可以在 Ubuntu 的 image 基础上，往里面加入 Apache 服务器，形成你的 image。</p><pre class="line-numbers language-none"><code class="language-none"># 列出本机所有的 image 文件$ docker image ls# 删除特定的 image$ docker image rm [imageName]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p>image 文件是通用的，一台机器的 image 文件拷贝到另一台机器，照样可以使用。一般来说，为了节省时间，我们应该尽量使用别人制作好的 image 文件，而不是自己制作。即使要定制，也应该基于别人的 image 文件进行加工，而不是从零开始制作。</p><p>为了方便分享，image 文件制作完成后，可以上传到网上的仓库。Docker 的官方仓库 Docker Hub 是最重要、最常用的 image 仓库。此外，公开分享自己制作的 image 文件也是可以的。</p><h3 id="官方镜像-Hello-World"><a href="#官方镜像-Hello-World" class="headerlink" title="官方镜像 Hello World"></a>官方镜像 Hello World</h3><p>下面，我们通过最简单的 image “hello word”，来感受一下 Docker 的易用性。</p><p>首先我们运行下面的命令，将 image 从仓库抓取到本地：</p><pre class="line-numbers language-none"><code class="language-none">$ docker image pull hello-world<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>抓取成功以后，使用下面的指令，就能在本机看到这个 image 文件了：</p><pre class="line-numbers language-none"><code class="language-none">$ docker image ls<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>运行这个 image：</p><pre class="line-numbers language-none"><code class="language-none">$ docker container run hello-world<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>docker container run 命令会根据 image 的设定，生成一个正在运行的容器实例。</p><p>注意，docker container run 命令具有自动抓取 image 文件的功能。如果发现本地没有指定的 image 文件，就会从云端仓库自动抓取。因此，前面的 docker image pull 命令并不是必需的步骤。如果运行成功，你就会在屏幕上读到类似下面的输出：</p><pre class="line-numbers language-none"><code class="language-none">$ docker container run hello-worldHello from Docker!This message shows that your installation appears to be working correctly.......<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>输出这段提示以后，hello world 就会停止运行，容器自动终止。</p><p>有些容器不会自动终止，比如一些容器提供的是服务：像是Ubuntu的image，就可以在命令行体验Ubuntu系统：</p><pre class="line-numbers language-none"><code class="language-none">$ docker container run -it ubuntu bash<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>对于那些不会自动终止的容器，我们可以使用 docker container kill 命令终止。首先我们可以使用 docker container ls 找到你要终止容器的id，然后使用 kill 命令终止容器：</p><pre class="line-numbers language-none"><code class="language-none">$ docker contianer ls $ docker container kill [containerId]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><h3 id="建立自己的容器"><a href="#建立自己的容器" class="headerlink" title="建立自己的容器"></a>建立自己的容器</h3><p>学会使用官方的 image 文件以后，接下来的问题就是，如何生成自己的 image 文件？这里就需要使用 Dockerfile 文件，Dockerfile 是一个文本文件，用来配置 image 的具体内容。Docker 会根据该文件生成二进制的 image 文件。</p><p>下面我们在本地编辑一个 Python 文件 hello.py，这个文件的功能是使用 Python 打印出一行字符串：</p><pre class="line-numbers language-none"><code class="language-none">print('Hello World :)')<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>然后，我们可以在这个项目的相同路径中，新建一个文本文件 .dockerignore，写入以下内容：</p><pre class="line-numbers language-none"><code class="language-none">__pycache__env<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>这段代码表示，<strong>pycache</strong> 和 env 这两个路径被排除，不会被打包进入 image 文件。如果你没有路径要排除，这个文件可以不用建。</p><p>然后，在项目的根目录下，新建一个文件文件 Dockerfile，写入下面的内容：</p><pre class="line-numbers language-none"><code class="language-none">FROM python3.COPY . /appWORKDIR /apppython3 main.py<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p>上面的代码一共五行，含义如下：</p><pre class="line-numbers language-none"><code class="language-none"># 将 image 文件继承与官方的3.7版本的PythonFROM python:3.7# 将当前目录下的所有文件（除了 .dockerignore 排除的路径），都拷贝进 image 文件的 /app 目录。COPY . /app # 指定接下来的工作路径为 /appWORKDIR /app # 在 /app 目录下，运行 python 文件CMD python3 hello.py <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>有了 Dockerfile 之后，就可以使用 docker image build 命令创建 image 文件了：</p><pre class="line-numbers language-none"><code class="language-none">$ docker image build -t python-app .or $ docker image build -t python-app:0.0.1 .<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>这段命令行的意思是，-t 参数用来指定 image 文件的名字，后面还可以用冒号指定标签。如果不指定，默然的标签是latest。最后的那个点表示 Dockerfile 文件使用的路径，上面的例子是当前路径，所以是一个点。</p><p>如果运行成功，就能使用 docker image ls 看到新的image文件了。</p><p>创建好 image 之后，就能使用 docker container run 运行 image，并生成容器了。</p><pre class="line-numbers language-none"><code class="language-none">$ docker container run python3-appHello World :)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>如果一切正常，运行上面的命令后，就会返回输出内容，这就代表运行完成啦。</p><p>祝大家学习快乐！</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> Docker </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 配置 </tag>
-            
-            <tag> docker学习 </tag>
-            
-        </tags>
       
     </entry>
     
@@ -180,6 +201,33 @@
             <tag> 数据结构复习 </tag>
             
             <tag> 串 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Docker_1</title>
+      <link href="2021/01/08/docker-1/"/>
+      <url>2021/01/08/docker-1/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Docker是什么？"><a href="#Docker是什么？" class="headerlink" title="Docker是什么？"></a>Docker是什么？</h2><h3 id="麻烦的环境部署"><a href="#麻烦的环境部署" class="headerlink" title="麻烦的环境部署"></a>麻烦的环境部署</h3><p>在软件开发中，最麻烦的事情之一就是环境配置。在正常情况下，如果要保证程序能运行，我们需要设置好操作系统，以及各种库和组件的安装。</p><p>举例来说，要运行一个Python程序，计算机必须要有 Python 引擎，还需要安装好程序的各种依赖，甚至还要配置特定的环境变量。假设你有两个程序都需要部署在同一个服务器上，一个需要软件是基于Python2.0，一个是Python3.0，那么在部署上就很容易造成混乱。因为不同版本的Python模块可能互不兼容，况且不同开发环境上的库也需要额外的配置。如果要部署很多程序，而开发环境和部署环境各不相同的话，可想而知配置得多么麻烦。</p><p>为了更好地将软件从一个环境移植到另一个环境上，必须从根源上解决问题，那么如何在移植软件的时候，将一模一样的原始环境迁移过来呢？</p><h3 id="虚拟机（Virtual-Machine）"><a href="#虚拟机（Virtual-Machine）" class="headerlink" title="虚拟机（Virtual Machine）"></a>虚拟机（Virtual Machine）</h3><p>虚拟机是移植环境的一种解决方案。虚拟机本质上也是一个软件，在这个软件中，我们可以运行另一种操作系统。比如我们想要在 MacOS 上运行 Linux 系统，我们就在电脑上安装 Linux 镜像，并使用虚拟机打开此镜像，就能创建出一个镜中镜了。这个方案非常方便，想要新环境，就安装镜像，然后使用虚拟机打开，不想要直接删除。但是这个方案有几个缺点：</p><ol><li>占用资源多：虚拟机需要安装整个操作系统，自然会消耗大量内存和硬盘空间。如我们只需要运行1MB的软件，有时候也不得不安装几个G的环境才能运行。</li><li>运行步骤冗余：虚拟机安装的是完整的系统，每次运行程序都需要按部就班，打开系统、登入用户等等之类麻烦的步骤，很不方便。</li><li>运行速度慢：为了运行特定环境中的软件，虚拟机必须先运行系统，而系统占用的资源往往很多（网络，GUI，IO等等），自然也会影响运行速度。</li></ol><h3 id="Linux容器（Container）"><a href="#Linux容器（Container）" class="headerlink" title="Linux容器（Container）"></a>Linux容器（Container）</h3><p>为了解决虚拟机存在的这些缺点，Linux发展出了另一种虚拟化的技术：Linux容器。Linux 容器不是模拟一个完整的操作系统，而是对进程进行隔离。或者说，就是在正常进程的外面套用了一个保护层。对于容器里面的进程来说，它接触到的各种资源都是虚拟的，从而实现与底层程序的隔离。由于容器是进程级别的，相比虚拟机有更多优势：</p><ol><li>占有资源少：容器只占用需要的资源，不占用那些用不到的资源。相比于虚拟机安装完整的操作系统，容器需要消耗的空间自然就少了很多。</li><li>资源利用率高：虚拟机都是独享资源，电脑需要为每个虚拟环境单独分配资源，不仅仅占用空间大，而且资源的利用率很低。而容器之间可以共享资源，最大化资源的利用率。</li><li>运行速度快：容器里面的应用就是底层系统的一个进程，所以启动容器相当于直接运行本机的一个进程，而不是一个完整并臃肿的操作系统，自然就快很多。</li></ol><h3 id="Docker是什么？-1"><a href="#Docker是什么？-1" class="headerlink" title="Docker是什么？"></a>Docker是什么？</h3><p>Docker属于Linux容器的一种封装，提供简单易用的容器使用接口，它也是目前最流行的Linux容器解决方案。Docker 将软件代码和其依赖，全打包在一个文件中。运行单个文件，就会生成虚拟容器。在这个虚拟容器中，不管本地的操作系统是如何的不同，此容器都能照常运行。</p><p>简而言之，Docker的接口非常简单，可以帮助用户更好地创建和使用容器，让相同的代码在不同的环境上正常运行。</p><h3 id="Docker的用途"><a href="#Docker的用途" class="headerlink" title="Docker的用途"></a>Docker的用途</h3><p>Docker目前主要有以下三个用途：</p><ol><li>提供一次性的环境：本地测试别人的软件、持续集成的时候提供单元测试和构建的环境。</li><li>提供弹性的云服务：因为Docker容器可以随时启动或关闭，所以非常适合动态规划和缩容。</li><li>组建微服务构架：通过多个容器，服务的部署能更加灵活，帮助实现微服务构架。</li></ol><h2 id="运行第一个Docker容器"><a href="#运行第一个Docker容器" class="headerlink" title="运行第一个Docker容器"></a>运行第一个Docker容器</h2><h3 id="安装Docker"><a href="#安装Docker" class="headerlink" title="安装Docker"></a>安装Docker</h3><p>Docker是一个开源的商业产品，有两个版本：社群版（Community Edition）和企业本（Enterprise Edition）。企业版中包含了一些收费服务，个人开发者一般用不到。下面我们就来下载并使用社区版。</p><p>Docker CE 的安装可以参看官网网站：<a href="https://docs.docker.com/get-docker/%EF%BC%8C%E8%AF%B7%E6%A0%B9%E6%8D%AE%E8%87%AA%E5%B7%B1%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%B1%BB%E5%9E%8B%E9%80%89%E6%8B%A9%E7%9B%B8%E5%AF%B9%E5%BA%94%E7%9A%84%E7%89%88%E6%9C%AC%E3%80%82">https://docs.docker.com/get-docker/，请根据自己操作系统的类型选择相对应的版本。</a></p><p>安装完成后，运行下面的命令，验证是否安装成功。</p><pre class="line-numbers language-none"><code class="language-none">$ docker version<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>确认 Docker 安装完毕后，我们可以使用以下命令运行 Docker：</p><pre class="line-numbers language-none"><code class="language-none">$ sudo service docker start<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>使用 Mac 的朋友直接打开下载好的 Docker 软件即可。</p><h3 id="image文件"><a href="#image文件" class="headerlink" title="image文件"></a>image文件</h3><p>Docker 把应用程序及其依赖，打包在 image 文件里面。只有通过这个文件，才能生成 Docker 容器。image 文件可以看作是容器的设计蓝图。Docker 根据 image 文件生成容器的实例。同一个 image 文件，可以生成多个同时运行的容器实例。</p><p>image 是二进制文件，在实际开发中，一个 image 文件往往通过继承另一个 image 文件，加上一些个性化设置而生成。举例来说，你可以在 Ubuntu 的 image 基础上，往里面加入 Apache 服务器，形成你的 image。</p><pre class="line-numbers language-none"><code class="language-none"># 列出本机所有的 image 文件$ docker image ls# 删除特定的 image$ docker image rm [imageName]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p>image 文件是通用的，一台机器的 image 文件拷贝到另一台机器，照样可以使用。一般来说，为了节省时间，我们应该尽量使用别人制作好的 image 文件，而不是自己制作。即使要定制，也应该基于别人的 image 文件进行加工，而不是从零开始制作。</p><p>为了方便分享，image 文件制作完成后，可以上传到网上的仓库。Docker 的官方仓库 Docker Hub 是最重要、最常用的 image 仓库。此外，公开分享自己制作的 image 文件也是可以的。</p><h3 id="官方镜像-Hello-World"><a href="#官方镜像-Hello-World" class="headerlink" title="官方镜像 Hello World"></a>官方镜像 Hello World</h3><p>下面，我们通过最简单的 image “hello word”，来感受一下 Docker 的易用性。</p><p>首先我们运行下面的命令，将 image 从仓库抓取到本地：</p><pre class="line-numbers language-none"><code class="language-none">$ docker image pull hello-world<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>抓取成功以后，使用下面的指令，就能在本机看到这个 image 文件了：</p><pre class="line-numbers language-none"><code class="language-none">$ docker image ls<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>运行这个 image：</p><pre class="line-numbers language-none"><code class="language-none">$ docker container run hello-world<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>docker container run 命令会根据 image 的设定，生成一个正在运行的容器实例。</p><p>注意，docker container run 命令具有自动抓取 image 文件的功能。如果发现本地没有指定的 image 文件，就会从云端仓库自动抓取。因此，前面的 docker image pull 命令并不是必需的步骤。如果运行成功，你就会在屏幕上读到类似下面的输出：</p><pre class="line-numbers language-none"><code class="language-none">$ docker container run hello-worldHello from Docker!This message shows that your installation appears to be working correctly.......<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>输出这段提示以后，hello world 就会停止运行，容器自动终止。</p><p>有些容器不会自动终止，比如一些容器提供的是服务：像是Ubuntu的image，就可以在命令行体验Ubuntu系统：</p><pre class="line-numbers language-none"><code class="language-none">$ docker container run -it ubuntu bash<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>对于那些不会自动终止的容器，我们可以使用 docker container kill 命令终止。首先我们可以使用 docker container ls 找到你要终止容器的id，然后使用 kill 命令终止容器：</p><pre class="line-numbers language-none"><code class="language-none">$ docker contianer ls $ docker container kill [containerId]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><h3 id="建立自己的容器"><a href="#建立自己的容器" class="headerlink" title="建立自己的容器"></a>建立自己的容器</h3><p>学会使用官方的 image 文件以后，接下来的问题就是，如何生成自己的 image 文件？这里就需要使用 Dockerfile 文件，Dockerfile 是一个文本文件，用来配置 image 的具体内容。Docker 会根据该文件生成二进制的 image 文件。</p><p>下面我们在本地编辑一个 Python 文件 hello.py，这个文件的功能是使用 Python 打印出一行字符串：</p><pre class="line-numbers language-none"><code class="language-none">print('Hello World :)')<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>然后，我们可以在这个项目的相同路径中，新建一个文本文件 .dockerignore，写入以下内容：</p><pre class="line-numbers language-none"><code class="language-none">__pycache__env<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>这段代码表示，<strong>pycache</strong> 和 env 这两个路径被排除，不会被打包进入 image 文件。如果你没有路径要排除，这个文件可以不用建。</p><p>然后，在项目的根目录下，新建一个文件文件 Dockerfile，写入下面的内容：</p><pre class="line-numbers language-none"><code class="language-none">FROM python3.COPY . /appWORKDIR /apppython3 main.py<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p>上面的代码一共五行，含义如下：</p><pre class="line-numbers language-none"><code class="language-none"># 将 image 文件继承与官方的3.7版本的PythonFROM python:3.7# 将当前目录下的所有文件（除了 .dockerignore 排除的路径），都拷贝进 image 文件的 /app 目录。COPY . /app # 指定接下来的工作路径为 /appWORKDIR /app # 在 /app 目录下，运行 python 文件CMD python3 hello.py <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>有了 Dockerfile 之后，就可以使用 docker image build 命令创建 image 文件了：</p><pre class="line-numbers language-none"><code class="language-none">$ docker image build -t python-app .or $ docker image build -t python-app:0.0.1 .<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>这段命令行的意思是，-t 参数用来指定 image 文件的名字，后面还可以用冒号指定标签。如果不指定，默然的标签是latest。最后的那个点表示 Dockerfile 文件使用的路径，上面的例子是当前路径，所以是一个点。</p><p>如果运行成功，就能使用 docker image ls 看到新的image文件了。</p><p>创建好 image 之后，就能使用 docker container run 运行 image，并生成容器了。</p><pre class="line-numbers language-none"><code class="language-none">$ docker container run python3-appHello World :)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>如果一切正常，运行上面的命令后，就会返回输出内容，这就代表运行完成啦。</p><p>祝大家学习快乐！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Docker </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 配置 </tag>
+            
+            <tag> docker学习 </tag>
             
         </tags>
       
